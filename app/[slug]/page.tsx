@@ -167,7 +167,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const project = getProject((await params).slug);
   if (!project) notFound();
 
-  const { collection, index, next } = getProjectContext(project.slug);
+  const { collection, index } = getProjectContext(project.slug);
   const kicker = `${collection}/${String(index + 1).padStart(2, "0")}`;
   const hasArticle = project.sections.length > 0;
 
@@ -178,10 +178,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <header className="proj-masthead">
           <p className="kicker">
             <span className="accent">{kicker}</span>
-            <span>
-              {project.disciplines}
-              {project.year ? ` · ${project.year}` : ""}
-            </span>
           </p>
           <h1>{project.title}</h1>
           <p className="dek">{project.dek}</p>
@@ -214,14 +210,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
           </>
         )}
-
-        <div className="next-project">
-          <span className="label">Next in {collection}</span>
-          <a href={`/${next.slug}`}>
-            {next.title} <span className="accent">→</span>
-          </a>
-        </div>
-        <a className="back-link" href={`/${collection}`}>← All {collection === "work" ? "work" : "play"}</a>
       </main>
       <Footer />
     </>

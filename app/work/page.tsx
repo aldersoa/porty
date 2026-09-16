@@ -35,14 +35,15 @@ export function ProjectIndex({ projects, title }: { projects: Project[]; title: 
               )}
             </div>
             <div className="project-copy">
-              <span className="index-n">{String(index + 1).padStart(2, "0")}</span>
               <div>
-                <h3>
-                  {project.title}
-                  {project.locked && <span className="lock-note">private</span>}
-                </h3>
+                <div className="project-title-row">
+                  <span className="index-n">{String(index + 1).padStart(2, "0")}</span>
+                  <h3>
+                    {project.title}
+                    {project.locked && <span className="lock-note">private</span>}
+                  </h3>
+                </div>
                 <p className="dek">{project.dek}</p>
-                <p className="disciplines">{project.disciplines}</p>
               </div>
             </div>
           </a>

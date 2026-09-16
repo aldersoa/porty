@@ -55,13 +55,17 @@ export function DeckViewer({
     const loadPdf = async () => {
       try {
         const pdfjsMod = await import("pdfjs-dist/build/pdf.mjs");
+        const workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsMod.version}/build/pdf.worker.min.mjs`;
+        if (pdfjsMod.GlobalWorkerOptions.workerSrc !== workerSrc) {
+          pdfjsMod.GlobalWorkerOptions.workerSrc = workerSrc;
+        }
         if (cancelled) return;
         const response = await fetch(pdf, { cache: "no-store" });
         if (!response.ok) {
           throw new Error(`HTTP ${response.status} while fetching ${pdf}`);
         }
         const bytes = await response.arrayBuffer();
-        const doc = await pdfjsMod.getDocument({ data: new Uint8Array(bytes), disableWorker: true }).promise;
+        const doc = await pdfjsMod.getDocument({ data: new Uint8Array(bytes) }).promise;
         if (!cancelled) {
           setPdfDoc(doc);
           setPdfError(false);
@@ -206,7 +210,7 @@ export function DeckViewer({
           <span aria-hidden="true">→</span>
         </button>
         <div className="deck-progress" aria-hidden="true">
-          <span style={{ width: `${((page + 1) / totalPages) * 100}%` }} />
+          <span style={{ transform: `scaleX(${(page + 1) / totalPages})` }} />
         </div>
       </div>
       <div className="deck-bar">

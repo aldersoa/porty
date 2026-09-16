@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-16T16:49:00-05:00",
+  "title": "Design System: Gail Alderson Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper Ground",
+        "canonical": "#f7f7f3",
+        "tonalRamp": [
+          "oklch(0.18 0.01 95)",
+          "oklch(0.28 0.01 95)",
+          "oklch(0.38 0.01 95)",
+          "oklch(0.5 0.01 95)",
+          "oklch(0.62 0.01 95)",
+          "oklch(0.74 0.01 95)",
+          "oklch(0.86 0.01 95)",
+          "oklch(0.96 0.01 95)"
+        ]
+      },
+      "paper-bright": {
+        "role": "neutral",
+        "displayName": "Bright Paper",
+        "canonical": "#fff",
+        "tonalRamp": [
+          "oklch(0.2 0 0)",
+          "oklch(0.3 0 0)",
+          "oklch(0.4 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(1 0 0)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink Text",
+        "canonical": "#11110f",
+        "tonalRamp": [
+          "oklch(0.16 0.01 95)",
+          "oklch(0.26 0.01 95)",
+          "oklch(0.36 0.01 95)",
+          "oklch(0.48 0.01 95)",
+          "oklch(0.6 0.01 95)",
+          "oklch(0.72 0.01 95)",
+          "oklch(0.84 0.01 95)",
+          "oklch(0.94 0.01 95)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Editorial Gray",
+        "canonical": "#686860",
+        "tonalRamp": [
+          "oklch(0.2 0.01 95)",
+          "oklch(0.3 0.01 95)",
+          "oklch(0.4 0.01 95)",
+          "oklch(0.5 0.01 95)",
+          "oklch(0.62 0.01 95)",
+          "oklch(0.72 0.01 95)",
+          "oklch(0.82 0.01 95)",
+          "oklch(0.9 0.01 95)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Rule Line",
+        "canonical": "#cecec5",
+        "tonalRamp": [
+          "oklch(0.2 0.005 95)",
+          "oklch(0.32 0.005 95)",
+          "oklch(0.44 0.005 95)",
+          "oklch(0.56 0.005 95)",
+          "oklch(0.68 0.005 95)",
+          "oklch(0.78 0.005 95)",
+          "oklch(0.88 0.005 95)",
+          "oklch(0.95 0.005 95)"
+        ]
+      },
+      "signal": {
+        "role": "primary",
+        "displayName": "Graphite Signal",
+        "canonical": "#41413c",
+        "tonalRamp": [
+          "oklch(0.2 0.015 95)",
+          "oklch(0.3 0.015 95)",
+          "oklch(0.4 0.015 95)",
+          "oklch(0.5 0.015 95)",
+          "oklch(0.6 0.015 95)",
+          "oklch(0.7 0.015 95)",
+          "oklch(0.8 0.015 95)",
+          "oklch(0.9 0.015 95)"
+        ]
+      },
+      "media-surface": {
+        "role": "neutral",
+        "displayName": "Media Surface",
+        "canonical": "#e9e9e3",
+        "tonalRamp": [
+          "oklch(0.22 0.008 95)",
+          "oklch(0.34 0.008 95)",
+          "oklch(0.46 0.008 95)",
+          "oklch(0.58 0.008 95)",
+          "oklch(0.7 0.008 95)",
+          "oklch(0.8 0.008 95)",
+          "oklch(0.9 0.008 95)",
+          "oklch(0.96 0.008 95)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page hero statements and large narrative anchors."
+      },
+      "project-hero": {
+        "displayName": "Project Hero",
+        "purpose": "Case study title lockups on project pages."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Long-form reading at stable measure and cadence."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Deck bars, figcaptions, footers, and utility copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase metadata, index markers, and discipline tags."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(.2, .7, .2, 1)",
+        "purpose": "Default easing for hover transitions and progress movement."
+      },
+      {
+        "name": "ease-switch-pop",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Letter-switch pop animation in the ALDERSON mark."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Navigation Link Active",
+      "kind": "nav",
+      "refersTo": "nav-link-active",
+      "description": "Muted navigation link with hand-drawn active underline.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">work</a></nav>",
+      "css": ".ds-nav a{position:relative;color:#686860;font-family:Manrope,-apple-system,Helvetica,sans-serif;font-size:1rem;font-weight:400;padding:8px 0;text-decoration:none;transition:color .18s cubic-bezier(.2,.7,.2,1),font-weight .18s cubic-bezier(.2,.7,.2,1)}.ds-nav a:hover,.ds-nav a[aria-current='page']{color:#11110f;font-weight:500}.ds-nav a[aria-current='page']::after{content:'';position:absolute;left:-4%;right:-4%;bottom:-9px;height:7px;background:url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 8\" preserveAspectRatio=\"none\"><path d=\"M1 5 C 20 1, 35 7, 52 4 S 85 2, 99 5\" fill=\"none\" stroke=\"%2341413c\" stroke-width=\"2.4\" stroke-linecap=\"round\"/></svg>') no-repeat center/100% 100%}"
+    },
+    {
+      "name": "Project Card Media",
+      "kind": "card",
+      "description": "Work and play index tile with restrained media zoom.",
+      "html": "<article class=\"ds-project-card\"><a class=\"ds-project-media\" href=\"#\"><img alt=\"Project preview\" src=\"https://dummyimage.com/1200x900/e9e9e3/11110f\" /></a></article>",
+      "css": ".ds-project-card{display:block;background:#f7f7f3}.ds-project-media{display:block;overflow:hidden;background:#e9e9e3;aspect-ratio:4/3}.ds-project-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}.ds-project-media:hover img{transform:scale(1.025)}"
+    },
+    {
+      "name": "Project Card Copy Stack",
+      "kind": "custom",
+      "description": "Index-aligned title row with supporting description on a shared text column.",
+      "html": "<article class=\"ds-project-copy\"><div class=\"ds-title-row\"><span class=\"ds-index\">01</span><h3>Branding a startup</h3></div><p class=\"ds-dek\">Naming, logo, and a full-out visual identity for an early-stage hardware startup.</p></article>",
+      "css": ".ds-project-copy{display:block;padding-top:16px;font-family:Manrope,-apple-system,Helvetica,sans-serif}.ds-title-row{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:baseline}.ds-index{color:#41413c;font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}.ds-title-row h3{margin:0 0 6px;font-size:clamp(1.05rem,1.8vw,1.4rem);font-weight:550;letter-spacing:-.02em;color:#11110f}.ds-dek{margin:0 0 8px 54px;color:#686860;font-size:.88rem;line-height:1.55;max-width:46ch}"
+    },
+    {
+      "name": "Deck Edge Control",
+      "kind": "button",
+      "description": "Invisible deck edge button that reveals directional intent on hover.",
+      "html": "<button class=\"ds-deck-zone\" type=\"button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15.5 19 8.5 12l7-7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span class=\"ds-sr-only\">Previous page</span></button>",
+      "css": ".ds-deck-zone{position:relative;display:grid;place-items:center;width:96px;height:180px;background:none;border:0;padding:0;color:transparent;cursor:w-resize}.ds-deck-zone svg{width:20px;height:20px}.ds-deck-zone:hover{color:#11110f;background:linear-gradient(to left,rgba(247,247,243,0),rgba(247,247,243,.5))}.ds-deck-zone:focus-visible{outline:2px solid #41413c;outline-offset:-2px;color:#11110f}.ds-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}"
+    },
+    {
+      "name": "Deck Progress Rail",
+      "kind": "custom",
+      "refersTo": "deck-progress-fill",
+      "description": "Three-pixel progress rail with transform-based fill movement.",
+      "html": "<div class=\"ds-progress\"><span style=\"transform:scaleX(.42)\"></span></div>",
+      "css": ".ds-progress{height:3px;background:rgba(17,17,15,.12);width:100%}.ds-progress span{display:block;width:100%;height:100%;background:#41413c;transform-origin:left center;transition:transform .35s cubic-bezier(.2,.7,.2,1)}"
+    },
+    {
+      "name": "Pull Quote",
+      "kind": "custom",
+      "refersTo": "pull-quote",
+      "description": "Editorial pull quote with softened graphite rule.",
+      "html": "<blockquote class=\"ds-pull\">Craft should feel inevitable.<small>Product Design Principle</small></blockquote>",
+      "css": ".ds-pull{margin:12px 0 32px;padding-left:26px;border-left:1px solid color-mix(in oklab,#41413c 45%,#f7f7f3);font-family:Manrope,-apple-system,Helvetica,sans-serif;font-weight:500;font-size:clamp(1.35rem,2.3vw,1.8rem);line-height:1.35;max-width:26ch;color:#11110f}.ds-pull small{display:block;margin-top:10px;font-family:Manrope,-apple-system,Helvetica,sans-serif;font-size:.88rem;line-height:1.45;color:#686860}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Paper Desk, Living Work",
+    "overview": "The interface behaves like a neutral desk surface: calm paper tones, dark ink typography, and low-noise borders that frame content without competing with it. Project artifacts carry saturation and visual energy, while the site chrome stays quiet and deliberate. The system uses editorial pacing instead of product-dashboard density. Large display headlines establish narrative hierarchy, then compact labels and measured body text support fast scanning. Motion is purposeful and restrained, reserved for wayfinding and direct manipulation.",
+    "keyCharacteristics": [
+      "Quiet neutral palette with one graphite signal color.",
+      "Typography-first hierarchy with one family, tuned through weight and tracking.",
+      "Sparse lines and section breaks instead of heavy containers.",
+      "Content-led media treatment with minimal decorative effects."
+    ],
+    "rules": [
+      {
+        "name": "The One-Signal Rule",
+        "body": "Keep `signal` rare and intentional. If everything is accented, nothing is accented.",
+        "section": "colors"
+      },
+      {
+        "name": "The Weight-First Rule",
+        "body": "Build hierarchy with weight and rhythm before adding another typeface.",
+        "section": "typography"
+      },
+      {
+        "name": "The Breathing-Room Rule",
+        "body": "Preserve generous vertical cadence; do not compress spacing to force density.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Resting surfaces stay flat. State changes use subtle transform and color shifts instead of default shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep chrome quiet and let project artifacts carry color energy.",
+      "Do use `signal` for wayfinding and actionable emphasis only.",
+      "Do maintain generous vertical spacing bands with line-based section breaks.",
+      "Do preserve readable text rhythm through tokenized caption/body/label roles."
+    ],
+    "donts": [
+      "Don't introduce additional accent hues without an explicit identity shift.",
+      "Don't rely on heavy shadows, thick rails, or glossy gradients as default language.",
+      "Don't tilt documentary imagery; keep photos and figure media level unless rotation communicates data.",
+      "Don't animate layout properties (`width`, `height`, `padding`, `margin`) for routine UI state changes."
+    ]
+  }
+}

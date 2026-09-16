@@ -1,0 +1,1664 @@
+{
+  "$schema-note": "Standardized documentation schema. Every project: masthead (title, dek, disciplines, year?) + sections (five-act arc: context → approach → making → outcome → reflection) + gallery (media not placed in a section). Tiers: case study = all acts; build log = all acts, play variants; gallery = masthead + gallery only. Block kinds: sub, text, list, steps, kv, pull, figures.",
+  "contact": {
+    "email": "abi.mar.ald@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/alderson1234/"
+  },
+  "work": [
+    {
+      "slug": "metaphos",
+      "title": "Branding a startup",
+      "dek": "Naming, logo, and a full-out visual identity for an early-stage hardware startup.",
+      "disciplines": "Product design · Graphic design",
+      "locked": false,
+      "cover": "/media/work/01.png",
+      "pdf": "/media/metaphos/final.pdf",
+      "sections": [],
+      "gallery": [],
+      "year": "2026",
+      "deck": {
+        "dir": "/media/metaphos/deck",
+        "pages": 7
+      }
+    },
+    {
+      "slug": "cutclear",
+      "title": "Designing a drug testing device",
+      "dek": "Taking an at-home drug testing device from problem to built solution.",
+      "disciplines": "Product design · Engineering",
+      "locked": false,
+      "cover": "/media/work/02.png",
+      "sections": [],
+      "gallery": [],
+      "pdf": "/media/cutclear/final.pdf",
+      "year": "2024",
+      "deck": {
+        "dir": "/media/cutclear/deck",
+        "pages": 57
+      }
+    },
+    {
+      "slug": "crm",
+      "title": "Designing a CRM platform",
+      "dek": "Moved Microsoft sales teams from offline spreadsheets to a shared CRM source of truth.",
+      "disciplines": "Product design · UX research",
+      "year": "2020",
+      "locked": false,
+      "cover": "/media/work/03.png",
+      "sections": [
+        {
+          "id": "context",
+          "act": "context",
+          "title": "Context",
+          "blocks": [
+            {
+              "kind": "text",
+              "body": [
+                "Microsoft sales teams tracked client contacts in local OneNote and Excel files. The workflow was slow, inconsistent, and hard to share across teams."
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/crm/01.png",
+                  "caption": "example of how a seller might save and manage contact data"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "approach",
+          "act": "approach",
+          "title": "Approach",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "objective"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "Design a CRM platform for sales teams at Microsoft."
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "phases"
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "Phase 1",
+                  "detail": "Map how sellers capture and maintain contact data today."
+                },
+                {
+                  "term": "Phase 2",
+                  "detail": "Co-design core workflows with sellers and partner teams."
+                },
+                {
+                  "term": "Phase 3",
+                  "detail": "Test early prototypes and de-risk rollout."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "phase-1",
+          "act": "making",
+          "title": "Phase 1 · Understand",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "research goal"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "Understand how sales teams create and manage client contact information."
+              ]
+            },
+            {
+              "kind": "kv",
+              "items": [
+                {
+                  "label": "Method",
+                  "value": "Contextual inquiry interviews"
+                },
+                {
+                  "label": "Format",
+                  "value": "1:1, online, moderated"
+                },
+                {
+                  "label": "Length",
+                  "value": "60 minutes"
+                },
+                {
+                  "label": "Participants",
+                  "value": "8 sellers"
+                }
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "research questions"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "What counts as a \"contact\" for different teams?",
+                "Where is contact data created, stored, and lost today?"
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "why contextual inquiry?"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "Watching sellers in context exposed workarounds and constraints that standard interviews usually miss."
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "design outcomes"
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "Offline tracking -> shared dashboard",
+                  "detail": "Replaced scattered OneNote/Excel records with one collaborative source of truth."
+                },
+                {
+                  "term": "Messy data -> standardized fields",
+                  "detail": "Added validation and formatting to reduce naming and email errors."
+                },
+                {
+                  "term": "Tool switching -> simpler navigation",
+                  "detail": "Introduced persistent navigation and quick actions for common tasks."
+                }
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/crm/02.gif",
+                  "caption": "1:1 contextual inquiry interviews"
+                },
+                {
+                  "src": "/media/crm/03.png",
+                  "caption": "rough draft of sales journey map created based on research insights"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "phase-2",
+          "act": "making",
+          "title": "Phase 2 · Co-design",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "research goal"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "Brainstorm and collaborate with sellers to inform the platform's initial design."
+              ]
+            },
+            {
+              "kind": "kv",
+              "items": [
+                {
+                  "label": "Method",
+                  "value": "Participatory design sessions"
+                },
+                {
+                  "label": "Format",
+                  "value": "Focus groups, online, moderated"
+                },
+                {
+                  "label": "Length",
+                  "value": "60 minutes"
+                },
+                {
+                  "label": "Participants",
+                  "value": "12 sellers"
+                }
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "research questions"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "What functionalities do sales teams need from a CRM platform?",
+                "How should these functionalities be prioritized?"
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "why participatory design?"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "Co-design sessions turned sellers into collaborators and gave us faster, clearer prioritization signals."
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "design outcomes"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "I ran affinity mapping sessions with PM and sales excellence partners to turn seller feedback into first-pass prototype decisions and GTM inputs."
+              ]
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "Hard to recall past contact -> timeline view",
+                  "detail": "Auto-generated contact history replaced manual Outlook digging."
+                },
+                {
+                  "term": "Different workflows -> customizable views",
+                  "detail": "Filterable modules let teams adapt the dashboard to their process."
+                }
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/crm/04.gif",
+                  "caption": "affinity diagramming during a collaborative whiteboarding session"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "phase-3",
+          "act": "making",
+          "title": "Phase 3 · Validate",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "research goal"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "Assess expectations and reactions to early prototypes."
+              ]
+            },
+            {
+              "kind": "kv",
+              "items": [
+                {
+                  "label": "Method",
+                  "value": "Prototype feedback sessions"
+                },
+                {
+                  "label": "Format",
+                  "value": "1:1 interviews, online, moderated"
+                },
+                {
+                  "label": "Length",
+                  "value": "60 minutes"
+                },
+                {
+                  "label": "Participants",
+                  "value": "12 sellers"
+                }
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "research questions"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "How are the proposed designs received?",
+                "How might we educate and onboard sales teams to this new platform?"
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "why hold prototype feedback sessions?"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "Early testing surfaced usability issues and built manager buy-in before launch."
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "design outcomes"
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "Onboarding friction -> CSV import",
+                  "detail": "CSV upload with field mapping reduced migration effort."
+                },
+                {
+                  "term": "Adoption risk -> early change management",
+                  "detail": "Pre-launch comms plus participatory testing increased confidence and excitement."
+                }
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/crm/05.png",
+                  "caption": "comments in Figma organized by trend"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "outcome",
+          "act": "outcome",
+          "title": "Outcome",
+          "blocks": [
+            {
+              "kind": "pull",
+              "quote": "95% adoption in the first three months of deployment.",
+              "note": "launched 9/18/20, org-wide"
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/crm/06.jpg",
+                  "caption": "the finished product"
+                },
+                {
+                  "src": "/media/crm/07.jpg"
+                },
+                {
+                  "src": "/media/crm/08.jpg"
+                },
+                {
+                  "src": "/media/crm/09.jpg"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "benchmarking",
+      "title": "Benchmarking UX",
+      "dek": "Built Microsoft Advertising's first UX health benchmark for a major UI refresh.",
+      "disciplines": "Product design · UX research",
+      "year": "2019",
+      "locked": false,
+      "cover": "/media/work/04.png",
+      "sections": [
+        {
+          "id": "context",
+          "act": "context",
+          "title": "Context",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "what is Microsoft Advertising?"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "Microsoft Advertising helps marketers launch and manage search campaigns that reach hundreds of millions of people globally."
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "problem statement"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "Ahead of the 2019 holiday season, we needed to validate whether the newly refreshed UI was usable for 150k+ advertisers."
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/benchmarking/01.jpg",
+                  "caption": "old UI (left) vs. new UI (right)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "approach",
+          "act": "approach",
+          "title": "Approach",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "my roles"
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "UX research",
+                  "detail": "planned research, recruited participants, executed study, analyzed data"
+                },
+                {
+                  "term": "Product design",
+                  "detail": "created prototypes, led future work prioritization discussions"
+                }
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "research goal"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "Establish a repeatable quantitative and qualitative UX benchmark for the new UI."
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "research questions"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "Can users complete critical tasks successfully?",
+                "Where do users struggle, and how severe are those issues?",
+                "How confident and satisfied do users feel in the new UI?",
+                "What SUS score does the experience earn?"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "analysis",
+          "act": "making",
+          "title": "Analysis",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "SUS response"
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "What it is",
+                  "detail": "System Usability Scale (SUS), a 10-question industry-standard usability survey."
+                },
+                {
+                  "term": "Why I used it",
+                  "detail": "Enabled apples-to-apples tracking over time and against competitor products."
+                }
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/benchmarking/02.jpg",
+                  "caption": "example SUS score shown"
+                },
+                {
+                  "src": "/media/benchmarking/03.png",
+                  "caption": "click paths (helpful for identifying problematic pages)"
+                }
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "task analysis"
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "What it is",
+                  "detail": "Task-level analysis framework across success rate, ease, and interaction telemetry."
+                },
+                {
+                  "term": "Why I used it",
+                  "detail": "Made usability, accessibility, and bug patterns easy to identify and communicate."
+                }
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "UI problem matrix"
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "What it is",
+                  "detail": "User-by-problem matrix that prioritizes issues by frequency and impact."
+                },
+                {
+                  "term": "Why I used it",
+                  "detail": "Gave stakeholders a clear, objective backlog for redesign and follow-up studies."
+                }
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/benchmarking/04.png",
+                  "caption": "UI problem matrix"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "outcome",
+          "act": "outcome",
+          "title": "Outcome",
+          "blocks": [
+            {
+              "kind": "pull",
+              "quote": "Uncovered and addressed 52 usability, accessibility, and responsive design concerns.",
+              "note": "study now performed annually"
+            },
+            {
+              "kind": "sub",
+              "text": "findings"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "Exposed a major cross-site reflow failure",
+                "Informed a redesign of global navigation hierarchy",
+                "Created a prioritized roadmap of UX fixes and feature opportunities"
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "my impact"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "Established the team's first formal UX health metrics, now reviewed year over year",
+                "Helped resolve 52 usability, accessibility, and responsive design issues",
+                "Set the baseline for internal benchmarking and competitive usability comparisons"
+              ]
+            }
+          ]
+        }
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "personas",
+      "title": "Defining web3 personas",
+      "dek": "A private case study — the public listing is preserved, the content stays behind the curtain.",
+      "disciplines": "Product design · UX research",
+      "locked": true,
+      "cover": "/media/work/05.png",
+      "sections": [],
+      "gallery": [],
+      "year": "2022"
+    }
+  ],
+  "play": [
+    {
+      "slug": "by-a-thread",
+      "title": "By a thread",
+      "dek": "Exploring optical fiber's potential to blend and diffuse light from two directions: 2,860 feet of fiber (yes, really), one mirror, and a lot of UV resin.",
+      "disciplines": "CAD · Embedded programming",
+      "year": "2025",
+      "locked": false,
+      "cover": "/media/play/01.jpg",
+      "sections": [
+        {
+          "id": "context",
+          "act": "context",
+          "title": "Context",
+          "blocks": [
+            {
+              "kind": "text",
+              "body": [
+                "Optical fibers transmit light through thin glass or plastic strands using total internal reflection, enabling high-speed data transfer and dynamic lighting. Beyond telecom and medical uses, it has become a powerful artistic medium, shaping light in space. This project explores optical fiber's potential to blend and diffuse light from two directions."
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/by-a-thread/02.jpg",
+                  "caption": "end-glow optical fiber, up close"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "approach",
+          "act": "approach",
+          "title": "Approach",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "materials"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "2,860ft (yes, really) optical fiber, .03\" diameter, PMMA end glow",
+                "WS2812B LEDs (5V)",
+                "Meanwell LRS-100-5 power supply (5V)",
+                "Black PLA filament",
+                "Loctite super glue",
+                "UV resin",
+                "14 AWG power cord (rated for 15A+)",
+                "XIAO ESP32C3",
+                "Basic electrical components (resistors, wire, in-line switch, push button, perfboard)",
+                "Soldering materials",
+                "IKEA NISSEDAL mirror"
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/by-a-thread/03.jpg",
+                  "caption": "sketching"
+                },
+                {
+                  "src": "/media/by-a-thread/04.png",
+                  "caption": "3d printed part diagrams"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "making",
+          "act": "making",
+          "title": "Making",
+          "blocks": [
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "Sketch out concept",
+                  "detail": "what should it look like? what fabrication steps need to be taken?"
+                },
+                {
+                  "term": "3D model LED holders",
+                  "detail": "start by measuring LED strip size, then model on Fusion 360"
+                },
+                {
+                  "term": "3D print LED holders",
+                  "detail": "print off, check fit, adjust model, rinse, repeat"
+                },
+                {
+                  "term": "Create circuit diagram",
+                  "detail": "list out hardware components, verify hardware is supported by libraries (ex. FastLED)"
+                },
+                {
+                  "term": "Solder everything together",
+                  "detail": "burn yourself, inhale lead, desire to have an actual studio space with real ventilation"
+                },
+                {
+                  "term": "Secure lights in holders",
+                  "detail": "these models are technically snapfit, but you can make them permanent with superglue"
+                },
+                {
+                  "term": "Secure lights to mirror",
+                  "detail": "superglue your printed parts (with LED strips inside) to edges of mirror"
+                },
+                {
+                  "term": "Create fiber bundles",
+                  "detail": "sand, cut, and group optical fiber bundles into 88 bundles consisting of 15 strands, each 26\" long"
+                },
+                {
+                  "term": "Bond fiber bundles",
+                  "detail": "use UV resin to secure fiber bundles to the LEDs housed in the printed parts"
+                },
+                {
+                  "term": "Program modes",
+                  "detail": "the fun part!"
+                }
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/by-a-thread/06.png",
+                  "caption": "circuit diagrams"
+                },
+                {
+                  "src": "/media/by-a-thread/07.jpg",
+                  "caption": "soldering"
+                },
+                {
+                  "src": "/media/by-a-thread/05.jpg",
+                  "caption": "fiber bundles bonded into a printed LED holder"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "outcome",
+          "act": "outcome",
+          "title": "Outcome",
+          "blocks": [
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/by-a-thread/01.jpg",
+                  "caption": "finished piece, lights on"
+                },
+                {
+                  "src": "/media/by-a-thread/video-01.mp4",
+                  "video": true,
+                  "poster": "/media/by-a-thread/video-01-poster.jpg",
+                  "caption": "threaded, in motion"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "my-first-sequencer",
+      "title": "My First Sequencer ™",
+      "dek": "A toy-inspired hardware step sequencer for making beats before you can read.",
+      "disciplines": "Product design · Engineering · Music",
+      "locked": false,
+      "cover": "/media/play/02.png",
+      "sections": [],
+      "gallery": [],
+      "pdf": "/media/my-first-sequencer/final.pdf",
+      "year": "2024",
+      "deck": {
+        "dir": "/media/my-first-sequencer/deck",
+        "pages": 12
+      }
+    },
+    {
+      "slug": "mycelium",
+      "title": "Mycelium",
+      "dek": "A responsive light-art project inspired by the branching root systems of mushrooms.",
+      "disciplines": "Engineering · Embedded programming",
+      "locked": false,
+      "cover": "/media/play/03.jpg",
+      "sections": [
+        {
+          "id": "context",
+          "act": "context",
+          "title": "Context",
+          "blocks": [
+            {
+              "kind": "text",
+              "body": [
+                "Mycelium are branching, thread-like hyphae that form the root systems of mushrooms. These web-like structures spread across substrates like compost and soil to search for nutrients necessary for the development of a fruiting body. This organism is incredibly intelligent: not only can it sense and navigate around objects, but it can communicate with other organisms in the ecosystem.",
+                "I was inspired by the responsive behavior and aesthetic form of mycelium, which led me to create this very fancy night light."
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/mycelium/01.jpg",
+                  "caption": "underground mycelium"
+                },
+                {
+                  "src": "/media/mycelium/02.jpg",
+                  "caption": "mycelium w/ mushrooms"
+                },
+                {
+                  "src": "/media/mycelium/03.jpg",
+                  "caption": "mycelium branches"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "approach",
+          "act": "approach",
+          "title": "Approach",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "materials"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "Gallery cradled board (24\" x 24\")",
+                "White gesso",
+                "Gloss varnish",
+                "Electrical tape",
+                "An alarming amount of hot glue",
+                "LED light strip (50 bulbs, WS2811)",
+                "Circuit building materials (jumper wires, 100uF capacitor, 330 ohm resistor, breadboard, push button)",
+                "Arduino Uno",
+                "Ultrasonic proximity sensor",
+                "Motion tracking sensor"
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/mycelium/04.png",
+                  "caption": "early sketches"
+                },
+                {
+                  "src": "/media/mycelium/05.png",
+                  "caption": "concept sketch"
+                },
+                {
+                  "src": "/media/mycelium/06.png",
+                  "caption": "interaction sketch"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "making",
+          "act": "making",
+          "title": "Making",
+          "blocks": [
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "Create design",
+                  "detail": "sketch ideas, pick direction, prototype optical bundles"
+                },
+                {
+                  "term": "Prepare the frame",
+                  "detail": "map holes, drill, sand, paint, finish wood"
+                },
+                {
+                  "term": "Program the lights",
+                  "detail": "create circuit, program Arduino, attach sensors"
+                },
+                {
+                  "term": "Create the hyphae",
+                  "detail": "prototype, hot glue, secure bundles to LEDs"
+                },
+                {
+                  "term": "Put it all together",
+                  "detail": "poke hyphae through board"
+                }
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/mycelium/07.jpg",
+                  "caption": "hyphae design"
+                },
+                {
+                  "src": "/media/mycelium/08.gif",
+                  "caption": "building hyphaes"
+                },
+                {
+                  "src": "/media/mycelium/09.jpg",
+                  "caption": "finished hyphaes (pre-attachment)"
+                },
+                {
+                  "src": "/media/mycelium/10.gif",
+                  "caption": "prototyping hyphae mapping"
+                },
+                {
+                  "src": "/media/mycelium/11.jpg",
+                  "caption": "finished mapping on foam board"
+                },
+                {
+                  "src": "/media/mycelium/12.jpg",
+                  "caption": "circuit design"
+                },
+                {
+                  "src": "/media/mycelium/13.jpg",
+                  "caption": "testing light emittance"
+                },
+                {
+                  "src": "/media/mycelium/14.jpg",
+                  "caption": "finished hyphaes (post-attachment)"
+                },
+                {
+                  "src": "/media/mycelium/15.jpg",
+                  "caption": "drilled holes in box"
+                },
+                {
+                  "src": "/media/mycelium/16.jpg",
+                  "caption": "poking hyphae through box"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "outcome",
+          "act": "outcome",
+          "title": "Outcome",
+          "blocks": [
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/mycelium/video-01.mp4",
+                  "video": true,
+                  "poster": "/media/mycelium/video-01-poster.jpg",
+                  "caption": "mycelium, sensing and responding"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "gallery": [],
+      "year": "2023"
+    },
+    {
+      "slug": "synthread",
+      "title": "synThread",
+      "dek": "Translating Spotify API song data into wearable patterns.",
+      "disciplines": "UX design · Data science · Music",
+      "locked": false,
+      "cover": "/media/play/04.png",
+      "sections": [],
+      "gallery": [
+        {
+          "src": "/media/synthread/01.png"
+        },
+        {
+          "src": "/media/synthread/02.png"
+        },
+        {
+          "src": "/media/synthread/03.png"
+        },
+        {
+          "src": "/media/synthread/04.png"
+        },
+        {
+          "src": "/media/synthread/05.png"
+        },
+        {
+          "src": "/media/synthread/06.png"
+        },
+        {
+          "src": "/media/synthread/07.png"
+        },
+        {
+          "src": "/media/synthread/08.png"
+        },
+        {
+          "src": "/media/synthread/09.png"
+        },
+        {
+          "src": "/media/synthread/10.png"
+        },
+        {
+          "src": "/media/synthread/11.png"
+        },
+        {
+          "src": "/media/synthread/12.png"
+        },
+        {
+          "src": "/media/synthread/13.png"
+        },
+        {
+          "src": "/media/synthread/14.png"
+        },
+        {
+          "src": "/media/synthread/15.png"
+        },
+        {
+          "src": "/media/synthread/16.png"
+        },
+        {
+          "src": "/media/synthread/17.png"
+        }
+      ],
+      "year": "2022"
+    },
+    {
+      "slug": "shapeworld",
+      "title": "Shapeworld",
+      "dek": "An infinity-mirror light show built over a few days, inspired by a visit to Dark Matter in Berlin.",
+      "disciplines": "CAD · Embedded programming",
+      "locked": false,
+      "cover": "/media/play/05.jpg",
+      "sections": [
+        {
+          "id": "context",
+          "act": "context",
+          "title": "Context",
+          "blocks": [
+            {
+              "kind": "text",
+              "body": [
+                "After visiting Dark Matter in Berlin, I was inspired to create a little light show of my own. I completed this project over the course of a few days, just for fun."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "approach",
+          "act": "approach",
+          "title": "Approach",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "materials"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "One way acrylic mirror",
+                "Two way acrylic mirror",
+                "Clear acrylic sheet (for cutting out sides and inner shape)",
+                "3mm tape",
+                "LED light strip (2812B, non-waterproof)",
+                "Circuit building materials (jumper wires, 100uF capacitor, 330 ohm resistor, breadboard, push button)",
+                "Arduino Nano"
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/shapeworld/02.jpg",
+                  "caption": "materials"
+                },
+                {
+                  "src": "/media/shapeworld/03.jpg",
+                  "caption": "Fusion 360 mockup"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "making",
+          "act": "making",
+          "title": "Making",
+          "blocks": [
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "Create design",
+                  "detail": "Fusion 360, schematic, Illustrator SVG file"
+                },
+                {
+                  "term": "Build the frame",
+                  "detail": "laser cut acrylic pieces, sand acrylic, adhere sidewalls"
+                },
+                {
+                  "term": "Program the lights",
+                  "detail": "create circuit, program Arduino"
+                },
+                {
+                  "term": "Put it all together",
+                  "detail": "adhere frame to both mirrors"
+                }
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/shapeworld/04.jpg",
+                  "caption": "schematics, just for my own reference during assembly"
+                },
+                {
+                  "src": "/media/shapeworld/05.png",
+                  "caption": "SVG file for laser cutting"
+                },
+                {
+                  "src": "/media/shapeworld/06.png",
+                  "caption": "laser cut acrylic pieces (with protective layer still on)"
+                },
+                {
+                  "src": "/media/shapeworld/07.png",
+                  "caption": "sand acrylic with 220 grit sandpaper to \"frost\""
+                },
+                {
+                  "src": "/media/shapeworld/08.jpg",
+                  "caption": "assemble frames"
+                },
+                {
+                  "src": "/media/shapeworld/09.jpg",
+                  "caption": "add lights"
+                },
+                {
+                  "src": "/media/shapeworld/10.jpg",
+                  "caption": "circuit design for programmed lights"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "outcome",
+          "act": "outcome",
+          "title": "Outcome",
+          "blocks": [
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/shapeworld/01.jpg",
+                  "caption": "shapeworld, lights on"
+                },
+                {
+                  "src": "/media/shapeworld/11.jpg"
+                },
+                {
+                  "src": "/media/shapeworld/12.jpg"
+                },
+                {
+                  "src": "/media/shapeworld/13.jpg"
+                },
+                {
+                  "src": "/media/shapeworld/14.jpg"
+                },
+                {
+                  "src": "/media/shapeworld/video-01.mp4",
+                  "video": true,
+                  "poster": "/media/shapeworld/video-01-poster.jpg",
+                  "caption": "shapeworld, in motion"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "gallery": [],
+      "year": "2022"
+    },
+    {
+      "slug": "dyad",
+      "title": "dyad",
+      "dek": "Music you control by moving: computer vision turns dance into sound.",
+      "disciplines": "Computer vision · Engineering · Music",
+      "locked": false,
+      "cover": "/media/play/06.png",
+      "sections": [],
+      "gallery": [
+        {
+          "src": "/media/dyad/01.png"
+        },
+        {
+          "src": "/media/dyad/02.png"
+        },
+        {
+          "src": "/media/dyad/video-01.mp4",
+          "video": true,
+          "poster": "/media/dyad/video-01-poster.jpg"
+        }
+      ],
+      "year": "2023"
+    },
+    {
+      "slug": "modhaus",
+      "title": "modHaus",
+      "dek": "A modular tabletop instrument for playful, low-friction tech house production.",
+      "disciplines": "CAD · Embedded programming · Music",
+      "locked": false,
+      "cover": "/media/play/07.jpg",
+      "sections": [
+        {
+          "id": "context",
+          "act": "context",
+          "title": "Context",
+          "blocks": [
+            {
+              "kind": "text",
+              "body": [
+                "modHaus is a playful instrument for exploring tech house. I designed it to make rhythm-building intuitive for people with little production experience."
+              ]
+            },
+            {
+              "kind": "list",
+              "items": [
+                "Percussion: kick, snare, hat, clap",
+                "Secondary percussion: toms, shakers, textures",
+                "Synth parts: basslines and melodies",
+                "FX: atmosphere, buildups, and vocal cuts"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "approach",
+          "act": "approach",
+          "title": "Approach",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "MVP specs"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "Turn sample on when something is touched",
+                "Turn sample off when something is released",
+                "Provide visual feedback after touch/release",
+                "Provide auditory feedback after touch/release"
+              ]
+            },
+            {
+              "kind": "sub",
+              "text": "supplies"
+            },
+            {
+              "kind": "list",
+              "items": [
+                "Soldering iron, solder, flush cutters",
+                "Solid core wire + wire strippers",
+                "Button pad 4x4 + button pad PCB",
+                "Arduino Mega or Uno",
+                "(x4) phillips head screws (1/2\", 4-40)",
+                "(x4) nylon standoffs (3/8\", 4-40)",
+                "(x16) LED - RGB clear (common cathode)",
+                "(x16) small signal diodes (1N4148)"
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/modhaus/01.png",
+                  "caption": "the concept"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "making",
+          "act": "making",
+          "title": "Making",
+          "blocks": [
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "Prepared PCB",
+                  "detail": "Soldered diodes and LEDs, then wired buttons and light matrix."
+                },
+                {
+                  "term": "Tested matrix",
+                  "detail": "Ran a simple Arduino sweep to verify all 16 LEDs and color states."
+                },
+                {
+                  "term": "Designed housing",
+                  "detail": "Built and printed a compact enclosure in Fusion 360."
+                },
+                {
+                  "term": "Programmed controller",
+                  "detail": "Mapped button input to serial messages and LED feedback states."
+                },
+                {
+                  "term": "Built Ableton plugin",
+                  "detail": "Expanded a basic serial prototype into multi-track sample control."
+                }
+              ]
+            },
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/modhaus/02.jpg",
+                  "caption": "soldering diodes"
+                },
+                {
+                  "src": "/media/modhaus/03.jpg",
+                  "caption": "finished diodes"
+                },
+                {
+                  "src": "/media/modhaus/04.jpg",
+                  "caption": "soldering LEDs"
+                },
+                {
+                  "src": "/media/modhaus/05.jpg",
+                  "caption": "clipping LEDs"
+                },
+                {
+                  "src": "/media/modhaus/07.jpg",
+                  "caption": "printing housing"
+                },
+                {
+                  "src": "/media/modhaus/08.jpg",
+                  "caption": "securing components"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "outcome",
+          "act": "outcome",
+          "title": "Outcome",
+          "blocks": [
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/modhaus/13.jpg",
+                  "caption": "the finished instrument"
+                },
+                {
+                  "src": "/media/modhaus/video-01.mp4",
+                  "video": true,
+                  "poster": "/media/modhaus/video-01-poster.jpg",
+                  "caption": "modHaus, played"
+                },
+                {
+                  "src": "/media/modhaus/video-02.mp4",
+                  "video": true,
+                  "poster": "/media/modhaus/video-02-poster.jpg"
+                },
+                {
+                  "src": "/media/modhaus/video-03.mp4",
+                  "video": true,
+                  "poster": "/media/modhaus/video-03-poster.jpg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reflection",
+          "act": "reflection",
+          "title": "Reflection",
+          "blocks": [
+            {
+              "kind": "sub",
+              "text": "challenges"
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "Function over vision",
+                  "detail": "I over-indexed on working code and underinvested in the expressive form I originally imagined."
+                },
+                {
+                  "term": "PureData / M4L troubleshooting",
+                  "detail": "Documentation gaps made debugging slower than expected."
+                },
+                {
+                  "term": "Quantization tradeoff",
+                  "detail": "Moved from 1/32 to 1/8 timing to absorb serial latency and keep rhythms tight."
+                }
+              ]
+            },
+            {
+              "kind": "pull",
+              "quote": "The UX researcher in me wants to pick apart every hesitation, fumbled button stroke, and furrowed brow… but the music lover in me just wants to hear what they'll create.",
+              "note": "because who doesn't love four on the floor?"
+            },
+            {
+              "kind": "text",
+              "body": [
+                "I hit most of my learning goals and loved watching people improvise with it for the first time."
+              ]
+            }
+          ]
+        }
+      ],
+      "gallery": [],
+      "year": "2024"
+    },
+    {
+      "slug": "base",
+      "title": "BASE",
+      "dek": "Democratizing water quality data by designing sensors for citizen scientists.",
+      "disciplines": "Product design · Engineering",
+      "locked": false,
+      "cover": "/media/play/08.png",
+      "sections": [],
+      "gallery": [
+        {
+          "src": "/media/base/01.png"
+        },
+        {
+          "src": "/media/base/02.png"
+        },
+        {
+          "src": "/media/base/03.png"
+        },
+        {
+          "src": "/media/base/04.png"
+        },
+        {
+          "src": "/media/base/05.png"
+        },
+        {
+          "src": "/media/base/06.png"
+        },
+        {
+          "src": "/media/base/07.png"
+        },
+        {
+          "src": "/media/base/08.png"
+        },
+        {
+          "src": "/media/base/09.png"
+        },
+        {
+          "src": "/media/base/10.png"
+        },
+        {
+          "src": "/media/base/11.png"
+        },
+        {
+          "src": "/media/base/12.png"
+        },
+        {
+          "src": "/media/base/13.png"
+        },
+        {
+          "src": "/media/base/14.png"
+        },
+        {
+          "src": "/media/base/15.png"
+        },
+        {
+          "src": "/media/base/16.png"
+        },
+        {
+          "src": "/media/base/17.png"
+        },
+        {
+          "src": "/media/base/18.png"
+        },
+        {
+          "src": "/media/base/19.png"
+        },
+        {
+          "src": "/media/base/20.png"
+        },
+        {
+          "src": "/media/base/21.png"
+        },
+        {
+          "src": "/media/base/22.png"
+        },
+        {
+          "src": "/media/base/23.png"
+        }
+      ],
+      "year": "2023"
+    },
+    {
+      "slug": "doodles",
+      "title": "Doodles",
+      "dek": "A running collection of sketches.",
+      "disciplines": "Sketching",
+      "locked": false,
+      "cover": "/media/play/09.png",
+      "sections": [],
+      "gallery": [
+        {
+          "src": "/media/doodles/01.png"
+        }
+      ],
+      "year": "2018–2026"
+    },
+    {
+      "slug": "photography",
+      "title": "Photography",
+      "dek": "Shot, edited, and occasionally over-edited.",
+      "disciplines": "Photoshop · Lightroom",
+      "locked": false,
+      "cover": "/media/play/10.jpg",
+      "sections": [],
+      "gallery": [
+        {
+          "src": "/media/photography/01.jpg"
+        },
+        {
+          "src": "/media/photography/02.jpg"
+        },
+        {
+          "src": "/media/photography/03.jpg"
+        },
+        {
+          "src": "/media/photography/04.jpg"
+        },
+        {
+          "src": "/media/photography/05.jpg"
+        },
+        {
+          "src": "/media/photography/06.jpg"
+        },
+        {
+          "src": "/media/photography/07.jpg"
+        },
+        {
+          "src": "/media/photography/08.jpg"
+        },
+        {
+          "src": "/media/photography/09.jpg"
+        },
+        {
+          "src": "/media/photography/10.jpg"
+        },
+        {
+          "src": "/media/photography/11.jpg"
+        }
+      ],
+      "year": "2018–2026"
+    },
+    {
+      "slug": "abstracting-albums",
+      "title": "Abstracting albums",
+      "dek": "Abstract print interpretations of the albums that shaped me, from Demon Days to Bubba.",
+      "disciplines": "Graphic design · Music",
+      "locked": false,
+      "cover": "/media/play/11.jpg",
+      "sections": [
+        {
+          "id": "context",
+          "act": "context",
+          "title": "Context",
+          "blocks": [
+            {
+              "kind": "text",
+              "body": [
+                "Music has been incredibly important to me from a young age. From begrudgingly listening to 80's country hits with my mom, to growing up alongside the creation of today's streaming platforms (iTunes, Napster, Grooveshark, etc.), to getting in my first car crash because I was headbanging too hard, I've spent a large majority of my life with headphones on."
+              ]
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "term": "When I was 8",
+                  "detail": "I started to diverge from my parents' music, and into alternative, dark pop. Demon Days by Gorillaz was packed full of interesting instrumentation and lyrical styling I'd never heard before."
+                },
+                {
+                  "term": "When I was 13",
+                  "detail": "I fell in love with melodic dubstep — Skrillex's Scary Monsters and Nice Sprites and Bangarang were just as chaotic as my impending puberty."
+                },
+                {
+                  "term": "When I went away to college",
+                  "detail": "I fell down a rap/hip-hop rabbit hole. Mac Miller's Watching Movies with the Sound Off, Kendrick Lamar's DAMN., and Tyler, the Creator's Flower Boy were beaten to a pulp on Spotify."
+                },
+                {
+                  "term": "In my adult life",
+                  "detail": "I've been largely into house and neo-psychedelia. Kaskade's Redux 003 might take the cake for \"most listens\", but Kaytranada's Bubba is up there, too. And Tame Impala has a special place in my heart — all of his albums absolutely slap."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "outcome",
+          "act": "outcome",
+          "title": "Outcome",
+          "blocks": [
+            {
+              "kind": "figures",
+              "items": [
+                {
+                  "src": "/media/abstracting-albums/01.png",
+                  "caption": "finished product"
+                },
+                {
+                  "src": "/media/abstracting-albums/02.png"
+                },
+                {
+                  "src": "/media/abstracting-albums/03.jpg"
+                },
+                {
+                  "src": "/media/abstracting-albums/04.jpg"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "gallery": [],
+      "year": "2022"
+    }
+  ]
+}

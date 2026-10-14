@@ -4,9 +4,8 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * The interactive ALDERSON masthead (16-SVG switch kit): each hand-drawn letter
- * floats gently on hover/focus and switches to its paired alternate drawing on
- * click (with a pop), toggling back on the next click. Artwork in /public/letters;
- * motion in app/alderson-animations.css (`shared-hover` / `switch-pop` keyframes).
+ * switches between its paired drawings each time it is hovered. Artwork lives in /public/letters;
+ * motion lives in app/alderson-animations.css.
  */
 
 const LETTERS = ["a", "l", "d", "e", "r", "s", "o", "n"] as const;
@@ -36,11 +35,11 @@ function Character({ index, letter, previewDelay }: { index: number; letter: str
     };
   }, [previewDelay]);
 
-  const toggle = () => {
+  const toggleForm = () => {
     setAlternate((current) => !current);
     const button = buttonRef.current;
     if (!button) return;
-    /* Force reflow so rapid clicks restart the pop animation. */
+    /* Force reflow so each letter begins its transition immediately. */
     button.classList.remove("is-switching");
     void button.offsetWidth;
     button.classList.add("is-switching");
@@ -53,8 +52,10 @@ function Character({ index, letter, previewDelay }: { index: number; letter: str
       type="button"
       aria-pressed={alternate}
       aria-label={`Toggle alternate version of letter ${letter.toUpperCase()}`}
+      onPointerEnter={toggleForm}
       onClick={(event) => {
-        toggle();
+        // Keyboard activation mirrors hover. Pointer entry already switched the form.
+        if (event.detail === 0) toggleForm();
         // Pointer clicks should not leave a visual focus box behind. Keyboard
         // activation keeps focus and the accessible :focus-visible treatment.
         if (event.detail > 0) window.requestAnimationFrame(() => buttonRef.current?.blur());

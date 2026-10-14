@@ -29,7 +29,7 @@ export default function Home() {
             <h2 className="section-label" id="principles-title">My design principles</h2>
             <ol className="principles">
               <li>functionality <span>it&rsquo;s gotta work</span></li>
-              <li>modularity <span>little pieces should become big pieces</span></li>
+              <li>modularity <span>little configurable pieces rock</span></li>
               <li>customizability <span>make it yours</span></li>
               <li>modesty <span>good design does not shout</span></li>
               <li>delight <span>make them smile</span></li>

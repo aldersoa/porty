@@ -1,4 +1,5 @@
 import { Footer, Header } from "@/components/site-shell";
+import { ProjectCard } from "@/components/project-card";
 import { siteData, type Project } from "@/lib/content";
 
 export default function Work() {
@@ -20,34 +21,7 @@ export function ProjectIndex({ projects, title }: { projects: Project[]; title: 
     <section className="projects" aria-labelledby={headingId}>
       <h2 className="sr-only" id={headingId}>{title}</h2>
       <div className="project-grid">
-        {projects.map((project, index) => (
-          <a
-            className="project-card"
-            href={`/${project.slug}`}
-            key={project.slug}
-            aria-label={`${project.title}, ${project.disciplines}`}
-          >
-            <div className="project-image-wrap">
-              {project.cover ? (
-                <img src={project.cover} alt="" loading={index < 2 ? "eager" : "lazy"} />
-              ) : (
-                <span className="locked-mark">private</span>
-              )}
-            </div>
-            <div className="project-copy">
-              <div>
-                <div className="project-title-row">
-                  <span className="index-n">{String(index + 1).padStart(2, "0")}</span>
-                  <h3>
-                    {project.title}
-                    {project.locked && <span className="lock-note">private</span>}
-                  </h3>
-                </div>
-                <p className="dek">{project.dek}</p>
-              </div>
-            </div>
-          </a>
-        ))}
+        {projects.map((project, index) => <ProjectCard project={project} index={index} key={project.slug} />)}
       </div>
     </section>
   );

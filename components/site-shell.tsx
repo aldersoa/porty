@@ -1,13 +1,10 @@
 import Link from "next/link";
+import { SiteNav } from "@/components/site-nav";
 
 export function Header({ current }: { current?: "about" | "work" | "play" }) {
   return (
     <header className="site-header">
-      <nav aria-label="Main navigation">
-        <Link aria-current={current === "about" ? "page" : undefined} href="/">about</Link>
-        <Link aria-current={current === "work" ? "page" : undefined} href="/work">work</Link>
-        <Link aria-current={current === "play" ? "page" : undefined} href="/play">play</Link>
-      </nav>
+      <SiteNav current={current} />
       <Link className="wordmark" href="/">gail alderson</Link>
       <div className="site-social">
         <a href="https://www.linkedin.com/in/alderson1234/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn (opens in a new tab)">

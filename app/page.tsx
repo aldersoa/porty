@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AldersonWordmark } from "@/components/alderson-wordmark";
+import { ProgressiveImage } from "@/components/progressive-image";
 import { Footer, Header } from "@/components/site-shell";
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
 
         <section className="spread" aria-labelledby="principles-title">
           <div>
-            <h2 className="section-label" data-n="i." id="principles-title">My design principles</h2>
+            <h2 className="section-label" id="principles-title">My design principles</h2>
             <ol className="principles">
               <li>functionality <span>it works first</span></li>
               <li>modularity <span>small parts, reusable everywhere</span></li>
@@ -36,7 +37,7 @@ export default function Home() {
           </div>
           <div className="portrait-stack">
             <figure>
-              <img src="/media/about/01.png" alt="Gail Alderson" />
+              <ProgressiveImage src="/media/about/01.png" alt="Gail Alderson" loading="lazy" />
               <figcaption><span className="fig-n">fig. a</span>self-portrait</figcaption>
             </figure>
           </div>
@@ -44,29 +45,33 @@ export default function Home() {
 
         <section className="spread rev" aria-labelledby="interests-title">
           <figure>
-            <img src="/media/about/02.jpg" alt="Gail Alderson beneath a canopy of lights" />
-            <figcaption><span className="fig-n">fig. b</span>beneath a canopy of lights, naturally</figcaption>
+            <ProgressiveImage src="/media/about/02.jpg" alt="Gail Alderson beneath a canopy of lights" loading="lazy" />
+            <figcaption><span className="fig-n">fig. b</span>i&rsquo;m not weird about lights, YOU&rsquo;RE weird</figcaption>
           </figure>
           <div>
-            <h2 className="section-label" data-n="ii." id="interests-title">My interests</h2>
+            <h2 className="section-label" id="interests-title">My interests</h2>
             <div className="interests">
               <div className="interest">
-                <h3><span className="accent">optics</span>: light and creative potential</h3>
+                <h3><span className="accent">optics</span></h3>
                 <p>
                   I explore how light shapes what we see and feel. See{" "}
                   <Link href="/by-a-thread">by a thread</Link> and <Link href="/mycelium">mycelium</Link>.
                 </p>
               </div>
               <div className="interest">
-                <h3><span className="accent">music</span>: theory, production, and mixing</h3>
+                <h3><span className="accent">music</span></h3>
                 <p>
-                  My all-time favorites live{" "}
+                  I&rsquo;m really into production and mixing. Check out my all-time favorites{" "}
                   <a href="https://open.spotify.com/playlist/29hCucoKetqwvekTVgp9hq?si=abdb47f8868d49fe" target="_blank" rel="noreferrer">here</a>.
                 </p>
               </div>
               <div className="interest">
-                <h3><span className="accent">books</span>: anthropology and psychology</h3>
-                <p>I return to <em>Sapiens</em>, <em>This Is Your Mind on Plants</em>, and <em>A Brave New World</em>.</p>
+                <h3><span className="accent">books</span></h3>
+                <ul className="interest-list">
+                  <li><em>A Brave New World</em></li>
+                  <li><em>Sapiens</em></li>
+                  <li><em>This Is Your Mind on Plants</em></li>
+                </ul>
               </div>
             </div>
           </div>

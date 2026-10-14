@@ -1,25 +1,31 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DeckViewer } from "@/components/deck-viewer";
+import { ProgressiveImage } from "@/components/progressive-image";
 import { Footer, Header } from "@/components/site-shell";
 import { getProject, getProjectContext, projects, type Block, type Figure, type Project } from "@/lib/content";
 
 export function generateStaticParams() {
-  return projects.map(({ slug }) => ({ slug }));
+  return projects.filter(({ locked }) => !locked).map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const project = getProject((await params).slug);
-  return project ? { title: `${project.title} - Gail Alderson`, description: project.dek } : {};
+  return project && !project.locked ? { title: `${project.title} - Gail Alderson`, description: project.dek } : {};
 }
-
-const roman = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"];
 
 function Media({ figure, eager = false }: { figure: Figure; eager?: boolean }) {
   if (figure.video) {
     return <video controls playsInline preload="metadata" poster={figure.poster || undefined} src={figure.src} />;
   }
-  return <img src={figure.src} alt={figure.caption ?? ""} loading={eager ? "eager" : "lazy"} />;
+  return (
+    <ProgressiveImage
+      src={figure.src}
+      alt={figure.caption ?? ""}
+      loading={eager ? "eager" : "lazy"}
+      fetchPriority={eager ? "high" : "auto"}
+    />
+  );
 }
 
 function Figures({ items, numberFrom }: { items: Figure[]; numberFrom: number }) {
@@ -102,7 +108,7 @@ function BlockView({ block, figureNumber }: { block: Block; figureNumber: number
             <li key={index}>
               <span>
                 <b>{item.term}</b>
-                {item.detail && <span className="detail"> — {item.detail}</span>}
+                {item.detail && <span className="detail">: {item.detail}</span>}
               </span>
             </li>
           ))}
@@ -146,7 +152,7 @@ function Article({ project }: { project: Project }) {
     <article className="article">
       {project.sections.map((section, sectionIndex) => (
         <section key={section.id} id={section.id} aria-labelledby={`${section.id}-title`}>
-          <h2 className="section-label" data-n={`${roman[sectionIndex] ?? sectionIndex + 1}.`} id={`${section.id}-title`}>
+          <h2 className="section-label" id={`${section.id}-title`}>
             {section.title}
           </h2>
           {section.blocks.map((block, blockIndex) => {
@@ -165,10 +171,9 @@ function Article({ project }: { project: Project }) {
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const project = getProject((await params).slug);
-  if (!project) notFound();
+  if (!project || project.locked) notFound();
 
-  const { collection, index } = getProjectContext(project.slug);
-  const kicker = `${collection}/${String(index + 1).padStart(2, "0")}`;
+  const { collection } = getProjectContext(project.slug);
   const hasArticle = project.sections.length > 0;
 
   return (
@@ -176,39 +181,25 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <Header current={collection} />
       <main>
         <header className="proj-masthead">
-          <p className="kicker">
-            <span className="accent">{kicker}</span>
-          </p>
           <h1>{project.title}</h1>
           <p className="dek">{project.dek}</p>
         </header>
 
-        {project.locked ? (
-          <section className="private-project">
-            <p>
-              This case study is <span className="accent">private.</span>
-            </p>
-            <p>The public listing has been preserved, but the content stays behind the curtain.</p>
+        {project.deck && (
+          <DeckViewer dir={project.deck.dir} pages={project.deck.pages} title={project.title} pdf={project.pdf} />
+        )}
+        {hasArticle && project.cover && (
+          <div className="proj-hero cover-artwork" data-cover={project.slug}>
+            <ProgressiveImage src={project.cover} alt="" loading="eager" fetchPriority="high" />
+          </div>
+        )}
+        {hasArticle && <Article project={project} />}
+        {project.gallery.length > 0 && (
+          <section className="gallery-grid" aria-label={`${project.title} project media`}>
+            {project.gallery.map((figure, mediaIndex) => (
+              <Media figure={figure} eager={mediaIndex < 2} key={figure.src} />
+            ))}
           </section>
-        ) : (
-          <>
-            {project.deck && (
-              <DeckViewer dir={project.deck.dir} pages={project.deck.pages} title={project.title} pdf={project.pdf} />
-            )}
-            {hasArticle && project.cover && (
-              <div className="proj-hero">
-                <img src={project.cover} alt="" loading="eager" />
-              </div>
-            )}
-            {hasArticle && <Article project={project} />}
-            {project.gallery.length > 0 && (
-              <section className="gallery-grid" aria-label={`${project.title} project media`}>
-                {project.gallery.map((figure, mediaIndex) => (
-                  <Media figure={figure} eager={mediaIndex < 2} key={figure.src} />
-                ))}
-              </section>
-            )}
-          </>
         )}
       </main>
       <Footer />

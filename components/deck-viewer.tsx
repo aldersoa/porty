@@ -1,5 +1,7 @@
 "use client";
 
+import { ProgressiveImage } from "@/components/progressive-image";
+
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 type PdfDocument = {
@@ -169,7 +171,6 @@ export function DeckViewer({
 
   const src = (i: number) => `${dir}/${String(i + 1).padStart(2, "0")}.jpg`;
   const pad = (n: number) => String(n).padStart(2, "0");
-
   return (
     <section
       className="deck"
@@ -193,10 +194,11 @@ export function DeckViewer({
                   style={{ display: "block", width: "100%" }}
                 />
               ) : (
-                <img
+                <ProgressiveImage
                   src={src(i)}
                   alt={`${title}, page ${i + 1} of ${totalPages}`}
                   loading={i < 2 ? "eager" : "lazy"}
+                  fetchPriority={i < 2 ? "high" : "auto"}
                   draggable={false}
                 />
               )}

@@ -158,6 +158,8 @@ Palette character: warm paper base, soft graphite neutrals, and a single accent 
 
 **The Weight-First Rule.** Build hierarchy with weight and rhythm before adding another typeface.
 
+**The No-Roman-Numerals Rule.** Do not prefix section headings with Roman numerals. Let headings and spacing communicate section hierarchy. Decimal counters may remain where they clarify sequence or position.
+
 Supporting implementation steps intentionally in use: `0.95rem`, `1.3rem`, `1.5rem`, `clamp(1.05rem, 1.6vw, 1.28rem)`, `clamp(1.05rem, 1.8vw, 1.4rem)`, `clamp(1rem, 1.5vw, 1.22rem)`, `clamp(1.35rem, 2.3vw, 1.8rem)`, and `clamp(1.3rem, 2.6vw, 2.1rem)`.
 
 ## Layout
@@ -210,9 +212,11 @@ Borders are thin and quiet (`1px`), including the softened pull-quote rule that 
 - **Do** use `signal` for wayfinding and actionable emphasis only.
 - **Do** maintain generous vertical spacing bands with line-based section breaks.
 - **Do** preserve readable text rhythm through tokenized caption/body/label roles.
+- **Do** use decimal counters when they clarify sequence or position.
 
 ### Don't:
 - **Don't** introduce additional accent hues without an explicit identity shift.
 - **Don't** rely on heavy shadows, thick rails, or glossy gradients as default language.
 - **Don't** tilt documentary imagery; keep photos and figure media level unless rotation communicates data.
 - **Don't** animate layout properties (`width`, `height`, `padding`, `margin`) for routine UI state changes.
+- **Don't** add Roman-numeral prefixes to section headings.

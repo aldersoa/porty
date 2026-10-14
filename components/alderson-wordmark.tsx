@@ -14,15 +14,27 @@ const LETTERS = ["a", "l", "d", "e", "r", "s", "o", "n"] as const;
 const artSrc = (index: number, letter: string, alternate: boolean) =>
   `/letters/${String(index + 1).padStart(2, "0")}-${letter}-${alternate ? "alternate" : "default"}.svg`;
 
-function Character({ index, letter }: { index: number; letter: string }) {
+function Character({ index, letter, previewDelay }: { index: number; letter: string; previewDelay?: number }) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [alternate, setAlternate] = useState(false);
+  const [previewing, setPreviewing] = useState(false);
 
   // Preload the alternate drawing so the first switch is instant.
   useEffect(() => {
     const preload = new Image();
     preload.src = artSrc(index, letter, true);
   }, [index, letter]);
+
+  // Preview the interaction once so visitors do not have to discover it by accident.
+  useEffect(() => {
+    if (previewDelay === undefined || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const start = window.setTimeout(() => setPreviewing(true), previewDelay);
+    const stop = window.setTimeout(() => setPreviewing(false), previewDelay + 520);
+    return () => {
+      window.clearTimeout(start);
+      window.clearTimeout(stop);
+    };
+  }, [previewDelay]);
 
   const toggle = () => {
     setAlternate((current) => !current);
@@ -37,11 +49,16 @@ function Character({ index, letter }: { index: number; letter: string }) {
   return (
     <button
       ref={buttonRef}
-      className="character"
+      className={`character${previewing ? " is-previewing" : ""}`}
       type="button"
       aria-pressed={alternate}
       aria-label={`Toggle alternate version of letter ${letter.toUpperCase()}`}
-      onClick={toggle}
+      onClick={(event) => {
+        toggle();
+        // Pointer clicks should not leave a visual focus box behind. Keyboard
+        // activation keeps focus and the accessible :focus-visible treatment.
+        if (event.detail > 0) window.requestAnimationFrame(() => buttonRef.current?.blur());
+      }}
       onAnimationEnd={(event) => {
         if (event.animationName === "switch-pop") {
           buttonRef.current?.classList.remove("is-switching");
@@ -56,10 +73,12 @@ function Character({ index, letter }: { index: number; letter: string }) {
 }
 
 export function AldersonWordmark() {
+  const previewDelays = new Map([[0, 500], [3, 760], [6, 1020]]);
+
   return (
     <div className="alderson-word" role="group" aria-label="ALDERSON, illustrated with playful hand-drawn letters">
       {LETTERS.map((letter, index) => (
-        <Character key={letter} index={index} letter={letter} />
+        <Character key={letter} index={index} letter={letter} previewDelay={previewDelays.get(index)} />
       ))}
     </div>
   );

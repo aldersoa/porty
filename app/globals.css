@@ -586,6 +586,11 @@ figcaption .fig-n {
 /* Gallery tier: masthead + media grid, no forced narrative */
 .gallery-grid { display: grid; gap: clamp(12px, 2vw, 28px); padding: clamp(36px, 5vw, 64px) 0 0; }
 .gallery-grid img, .gallery-grid video { display: block; width: 100%; height: auto; background: #e9e9e3; }
+.gallery-grid--phones {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 42px);
+  align-items: start;
+}
 
 /* ------------------------------------------------------------------ */
 /* Footer                                                              */
@@ -624,6 +629,7 @@ footer p { margin: 0; color: var(--muted); }
   .project-grid { grid-template-columns: 1fr; gap: 54px; }
   .project-copy .dek { margin-left: 54px; }
   .fig-row { grid-template-columns: 1fr; }
+  .gallery-grid--phones { grid-template-columns: 1fr; }
   .kv { grid-template-columns: 1fr 1fr; }
 }
 

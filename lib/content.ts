@@ -2,6 +2,8 @@ import data from "../content/projects.json";
 
 export type Figure = {
   src: string;
+  /** Screen-reader description. Prefer this over caption when provided. */
+  alt?: string;
   caption?: string;
   video?: boolean;
   poster?: string;

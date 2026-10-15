@@ -16,12 +16,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 function Media({ figure, eager = false }: { figure: Figure; eager?: boolean }) {
   if (figure.video) {
-    return <video controls playsInline preload="metadata" poster={figure.poster || undefined} src={figure.src} />;
+    const label = figure.alt ?? figure.caption;
+    return (
+      <video
+        aria-label={label}
+        controls
+        playsInline
+        preload="metadata"
+        poster={figure.poster || undefined}
+        src={figure.src}
+      />
+    );
   }
+  const alt = figure.alt ?? figure.caption ?? "";
   return (
     <ProgressiveImage
       src={figure.src}
-      alt={figure.caption ?? ""}
+      alt={alt}
       loading={eager ? "eager" : "lazy"}
       fetchPriority={eager ? "high" : "auto"}
     />
@@ -201,7 +212,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         )}
         {hasArticle && <Article project={project} />}
         {project.gallery.length > 0 && (
-          <section className="gallery-grid" aria-label={`${project.title} project media`}>
+          <section
+            className={`gallery-grid${project.slug === "synthread" ? " gallery-grid--phones" : ""}`}
+            aria-label={`${project.title} project media`}
+          >
             {project.gallery.map((figure, mediaIndex) => (
               <Media figure={figure} eager={mediaIndex < 2} key={figure.src} />
             ))}

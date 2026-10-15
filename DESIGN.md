@@ -176,6 +176,8 @@ Palette character: warm paper base, soft graphite neutrals, and a single accent 
 
 **The Role-Contrast Rule.** Primary section headings lead through a clear step in scale and space. Nested subsection headings remain compact and use Graphite Signal, staying close to their supporting copy. Build hierarchy with scale, weight, tone, and rhythm before adding another typeface.
 
+**The Caption Voice Rule.** Visible figure captions use concise, lowercase fragments without terminal punctuation. Accessibility descriptions are complete, sentence-case descriptions with terminal punctuation; they should communicate the media rather than copy its visible caption by default.
+
 **The No-Roman-Numerals Rule.** Do not prefix section headings with Roman numerals. Let headings and spacing communicate section hierarchy. Decimal counters may remain where they clarify sequence or position.
 
 Supporting implementation steps intentionally in use: `0.95rem`, `1.3rem`, `1.5rem`, `clamp(1.25rem, 1.6vw, 1.4rem)`, `clamp(1.05rem, 1.6vw, 1.28rem)`, `clamp(1.05rem, 1.8vw, 1.4rem)`, `clamp(1rem, 1.5vw, 1.22rem)`, `clamp(1.35rem, 2.3vw, 1.8rem)`, and `clamp(1.3rem, 2.6vw, 2.1rem)`.

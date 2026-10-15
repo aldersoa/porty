@@ -43,7 +43,7 @@
       "dek": "Moved Microsoft sales teams from offline spreadsheets to a shared CRM source of truth.",
       "disciplines": "Product design · UX research",
       "year": "2020",
-      "locked": false,
+      "locked": true,
       "cover": "/media/work/03.png",
       "sections": [
         {
@@ -390,16 +390,20 @@
               "items": [
                 {
                   "src": "/media/crm/06.jpg",
-                  "caption": "the finished product"
+                  "caption": "the finished product",
+                  "alt": "Composite of Microsoft Dynamics 365 screens showing call insights and follow-up workflow."
                 },
                 {
-                  "src": "/media/crm/07.jpg"
+                  "src": "/media/crm/07.jpg",
+                  "alt": "Dynamics 365 contact detail view with lead list and a guided follow-up checklist."
                 },
                 {
-                  "src": "/media/crm/08.jpg"
+                  "src": "/media/crm/08.jpg",
+                  "alt": "Dynamics 365 forecast dashboard with quota, prediction, and commit columns."
                 },
                 {
-                  "src": "/media/crm/09.jpg"
+                  "src": "/media/crm/09.jpg",
+                  "alt": "Dynamics 365 call-insights screen with transcript, sentiment timeline, and action items."
                 }
               ]
             }
@@ -414,7 +418,7 @@
       "dek": "Built Microsoft Advertising's first UX health benchmark for a major UI refresh.",
       "disciplines": "Product design · UX research",
       "year": "2019",
-      "locked": false,
+      "locked": true,
       "cover": "/media/work/04.png",
       "sections": [
         {
@@ -657,7 +661,13 @@
               "items": [
                 {
                   "src": "/media/by-a-thread/02.jpg",
-                  "caption": "end-glow optical fiber, up close"
+                  "caption": "demonstrating end glow of multiple thin fibers",
+                  "alt": "Demonstrating end glow of multiple thin fibers."
+                },
+                {
+                  "src": "/media/by-a-thread/01.jpg",
+                  "caption": "demonstrating light transmission in a thick fiber",
+                  "alt": "Stock image demonstrating light transmission in a thick fiber."
                 }
               ]
             }
@@ -693,11 +703,13 @@
               "items": [
                 {
                   "src": "/media/by-a-thread/03.jpg",
-                  "caption": "sketching"
+                  "caption": "sketching",
+                  "alt": "A picture of me brainstorming and sketching out ideas."
                 },
                 {
                   "src": "/media/by-a-thread/04.png",
-                  "caption": "3d printed part diagrams"
+                  "caption": "3d printed part diagrams",
+                  "alt": "3D-printed part diagrams."
                 }
               ]
             }
@@ -758,15 +770,18 @@
               "items": [
                 {
                   "src": "/media/by-a-thread/06.png",
-                  "caption": "circuit diagrams"
+                  "caption": "circuit diagrams",
+                  "alt": "Circuit diagrams."
                 },
                 {
                   "src": "/media/by-a-thread/07.jpg",
-                  "caption": "soldering"
+                  "caption": "soldering setup in my living room",
+                  "alt": "My soldering setup in my living room."
                 },
                 {
                   "src": "/media/by-a-thread/05.jpg",
-                  "caption": "fiber bundles bonded into a printed LED holder"
+                  "caption": "fiber bundles bonded into a printed LED holder",
+                  "alt": "Fiber bundles bonded into a printed LED holder."
                 }
               ]
             }
@@ -781,14 +796,11 @@
               "kind": "figures",
               "items": [
                 {
-                  "src": "/media/by-a-thread/01.jpg",
-                  "caption": "finished piece, lights on"
-                },
-                {
                   "src": "/media/by-a-thread/video-01.mp4",
                   "video": true,
                   "poster": "/media/by-a-thread/video-01-poster.jpg",
-                  "caption": "threaded, in motion"
+                  "layout": "full",
+                  "alt": "End-to-end project video showing how I made it and a demonstration of the final result."
                 }
               ]
             }
@@ -885,11 +897,13 @@
                 },
                 {
                   "src": "/media/mycelium/05.png",
-                  "caption": "concept sketch"
+                  "caption": "concept sketch",
+                  "alt": "Concept sketch exploring overall form and placement for Mycelium."
                 },
                 {
                   "src": "/media/mycelium/06.png",
-                  "caption": "interaction sketch"
+                  "caption": "interaction sketch",
+                  "alt": "Interaction sketch showing how sensors trigger light behavior in Mycelium."
                 }
               ]
             }
@@ -1001,58 +1015,36 @@
       "disciplines": "UX design · Data science · Music",
       "locked": false,
       "cover": "/media/play/04.png",
+      "pdf": "/media/synthread/final.pdf",
+      "deck": {
+        "dir": "/media/synthread/deck",
+        "pages": 17
+      },
       "sections": [],
       "gallery": [
         {
-          "src": "/media/synthread/01.png"
+          "src": "/media/synthread/mobile/02-welcome.png",
+          "alt": "synThread welcome screen with a continuous pastel wordmark, editorial headline, and violet Start button."
         },
         {
-          "src": "/media/synthread/02.png"
+          "src": "/media/synthread/mobile/03-signin-modal.png",
+          "alt": "Simplified Spotify authorization card over the dimmed synThread welcome screen."
         },
         {
-          "src": "/media/synthread/03.png"
+          "src": "/media/synthread/mobile/04-weaving.png",
+          "alt": "synThread loading screen with glowing pastel threads and the message Weaving your pattern."
         },
         {
-          "src": "/media/synthread/04.png"
+          "src": "/media/synthread/mobile/05-result.png",
+          "alt": "Generated textile result named Electric nostalgia with a colorful woven pattern and listening summary."
         },
         {
-          "src": "/media/synthread/05.png"
+          "src": "/media/synthread/mobile/06-pattern-story.png",
+          "alt": "Pattern explanation screen mapping tempo, energy, valence, acousticness, and listening eras to the textile design."
         },
         {
-          "src": "/media/synthread/06.png"
-        },
-        {
-          "src": "/media/synthread/07.png"
-        },
-        {
-          "src": "/media/synthread/08.png"
-        },
-        {
-          "src": "/media/synthread/09.png"
-        },
-        {
-          "src": "/media/synthread/10.png"
-        },
-        {
-          "src": "/media/synthread/11.png"
-        },
-        {
-          "src": "/media/synthread/12.png"
-        },
-        {
-          "src": "/media/synthread/13.png"
-        },
-        {
-          "src": "/media/synthread/14.png"
-        },
-        {
-          "src": "/media/synthread/15.png"
-        },
-        {
-          "src": "/media/synthread/16.png"
-        },
-        {
-          "src": "/media/synthread/17.png"
+          "src": "/media/synthread/mobile/07-save-share.png",
+          "alt": "Save and share screen showing the generated textile pattern on a finished synThread card."
         }
       ],
       "year": "2022"
@@ -1104,7 +1096,8 @@
               "items": [
                 {
                   "src": "/media/shapeworld/02.jpg",
-                  "caption": "materials"
+                  "caption": "materials",
+                  "alt": "Materials laid out for building Shapeworld, including acrylic pieces, mirrors, and LED strip."
                 },
                 {
                   "src": "/media/shapeworld/03.jpg",
@@ -1188,16 +1181,20 @@
                   "caption": "shapeworld, lights on"
                 },
                 {
-                  "src": "/media/shapeworld/11.jpg"
+                  "src": "/media/shapeworld/11.jpg",
+                  "alt": "Square acrylic frame with RGB LED strip lit in a rainbow gradient during assembly."
                 },
                 {
-                  "src": "/media/shapeworld/12.jpg"
+                  "src": "/media/shapeworld/12.jpg",
+                  "alt": "Arduino Nano prototype on a breadboard with wiring and a push button."
                 },
                 {
-                  "src": "/media/shapeworld/13.jpg"
+                  "src": "/media/shapeworld/13.jpg",
+                  "alt": "Finished Shapeworld piece glowing purple with an infinity-mirror depth effect."
                 },
                 {
-                  "src": "/media/shapeworld/14.jpg"
+                  "src": "/media/shapeworld/14.jpg",
+                  "alt": "Top-down view of the Shapeworld infinity tunnel lit in warm yellow LEDs."
                 },
                 {
                   "src": "/media/shapeworld/video-01.mp4",
@@ -1223,15 +1220,18 @@
       "sections": [],
       "gallery": [
         {
-          "src": "/media/dyad/01.png"
+          "src": "/media/dyad/01.png",
+          "alt": "dyad title graphic showing two tracked dancers outlined in blue and yellow."
         },
         {
-          "src": "/media/dyad/02.png"
+          "src": "/media/dyad/02.png",
+          "alt": "System diagram connecting dance input, YOLO object counting, Live OSC, and Ableton output."
         },
         {
           "src": "/media/dyad/video-01.mp4",
           "video": true,
-          "poster": "/media/dyad/video-01-poster.jpg"
+          "poster": "/media/dyad/video-01-poster.jpg",
+          "alt": "Two people dancing in a purple-lit room during a dyad demo."
         }
       ],
       "year": "2023"
@@ -1394,12 +1394,14 @@
                 {
                   "src": "/media/modhaus/video-02.mp4",
                   "video": true,
-                  "poster": "/media/modhaus/video-02-poster.jpg"
+                  "poster": "/media/modhaus/video-02-poster.jpg",
+                  "alt": "Prototype modHaus button matrix with one illuminated pad during touch testing."
                 },
                 {
                   "src": "/media/modhaus/video-03.mp4",
                   "video": true,
-                  "poster": "/media/modhaus/video-03-poster.jpg"
+                  "poster": "/media/modhaus/video-03-poster.jpg",
+                  "alt": "Ableton Live session with inset video of the modHaus hardware being played."
                 }
               ]
             }
@@ -1539,7 +1541,8 @@
       "sections": [],
       "gallery": [
         {
-          "src": "/media/doodles/01.png"
+          "src": "/media/doodles/01.png",
+          "alt": "Dark abstract doodle with scattered white specks and faint curved lines."
         }
       ],
       "year": "2018–2026"
@@ -1554,37 +1557,48 @@
       "sections": [],
       "gallery": [
         {
-          "src": "/media/photography/01.jpg"
+          "src": "/media/photography/01.jpg",
+          "alt": "Yellow Labrador swimming in open water while wearing a red collar."
         },
         {
-          "src": "/media/photography/02.jpg"
+          "src": "/media/photography/02.jpg",
+          "alt": "Silver wristwatch and ring arranged on a tabletop in warm studio light."
         },
         {
-          "src": "/media/photography/03.jpg"
+          "src": "/media/photography/03.jpg",
+          "alt": "Close-up of a white flower with an orange center against a dark background."
         },
         {
-          "src": "/media/photography/04.jpg"
+          "src": "/media/photography/04.jpg",
+          "alt": "Sunlit green leaf in focus with soft bokeh foliage behind it."
         },
         {
-          "src": "/media/photography/05.jpg"
+          "src": "/media/photography/05.jpg",
+          "alt": "Close-up portrait of two dogs, one looking into frame and one cropped at the muzzle."
         },
         {
-          "src": "/media/photography/06.jpg"
+          "src": "/media/photography/06.jpg",
+          "alt": "Flower buds with raindrops against a dark, blurred garden background."
         },
         {
-          "src": "/media/photography/07.jpg"
+          "src": "/media/photography/07.jpg",
+          "alt": "Indoor portrait of a blond man leaning forward and smiling at the camera."
         },
         {
-          "src": "/media/photography/08.jpg"
+          "src": "/media/photography/08.jpg",
+          "alt": "Person in heavy gloves lifting a roasted turkey from a stockpot outdoors."
         },
         {
-          "src": "/media/photography/09.jpg"
+          "src": "/media/photography/09.jpg",
+          "alt": "Sliced loaf on a wooden cutting board near a window."
         },
         {
-          "src": "/media/photography/10.jpg"
+          "src": "/media/photography/10.jpg",
+          "alt": "Close-up of a mallard duck standing on rocks by the water."
         },
         {
-          "src": "/media/photography/11.jpg"
+          "src": "/media/photography/11.jpg",
+          "alt": "Outdoor portrait of a man standing in a field under a cloudy sky."
         }
       ],
       "year": "2018–2026"
@@ -1641,16 +1655,20 @@
               "items": [
                 {
                   "src": "/media/abstracting-albums/01.png",
-                  "caption": "finished product"
+                  "caption": "finished product",
+                  "alt": "Grid of abstract album-cover interpretations printed as square cards."
                 },
                 {
-                  "src": "/media/abstracting-albums/02.png"
+                  "src": "/media/abstracting-albums/02.png",
+                  "alt": "Close-up collage of abstract album artworks arranged in a multi-row grid."
                 },
                 {
-                  "src": "/media/abstracting-albums/03.jpg"
+                  "src": "/media/abstracting-albums/03.jpg",
+                  "alt": "Wall installation of square abstract album prints arranged in a branching layout."
                 },
                 {
-                  "src": "/media/abstracting-albums/04.jpg"
+                  "src": "/media/abstracting-albums/04.jpg",
+                  "alt": "Wide shot of the completed abstract-album wall installation above a desk and sofa."
                 }
               ]
             }

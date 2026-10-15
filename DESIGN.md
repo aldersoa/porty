@@ -22,6 +22,18 @@ typography:
     fontWeight: 600
     lineHeight: 1.35
     letterSpacing: "-0.02em"
+  section-heading:
+    fontFamily: "Manrope, -apple-system, Helvetica, sans-serif"
+    fontSize: "clamp(1.25rem, 1.6vw, 1.4rem)"
+    fontWeight: 600
+    lineHeight: 1.25
+    letterSpacing: "-0.02em"
+  subsection-heading:
+    fontFamily: "Manrope, -apple-system, Helvetica, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 550
+    lineHeight: 1.35
+    letterSpacing: "-0.01em"
   body:
     fontFamily: "Manrope, -apple-system, Helvetica, sans-serif"
     fontSize: "1rem"
@@ -105,6 +117,10 @@ components:
     textColor: "{colors.ink}"
     typography: "{typography.title}"
     padding: "12px 0 32px 26px"
+  lights-carousel:
+    backgroundColor: "{colors.media-surface}"
+    transition: "450ms cubic-bezier(.16, 1, .3, 1)"
+    reducedMotion: "crossfade"
 ---
 
 # Design System: Gail Alderson Portfolio
@@ -151,16 +167,18 @@ Palette character: warm paper base, soft graphite neutrals, and a single accent 
 ### Hierarchy
 - **Display** (550, `clamp(2.6rem, 6.6vw, 6rem)`, 1.04, `-0.045em`): about and index hero statements.
 - **Project Hero** (550, `clamp(2.8rem, 7.5vw, 6.8rem)`, 0.96, `-0.05em`): project detail masthead titles.
-- **Title** (600, `1rem`, 1.35): section anchors and supporting headings.
+- **Section Heading** (600, `clamp(1.25rem, 1.6vw, 1.4rem)`, 1.25, `-0.02em`): primary section anchors such as “My interests” and project-section titles.
+- **Subsection Heading** (550, `1rem`, 1.35, `-0.01em`, Graphite Signal): compact headings nested within a section, such as “optics” and project subheads.
+- **Title** (600, `1rem`, 1.35): compact standalone titles where neither section role applies.
 - **Body** (400, `1rem`, 1.6): narrative copy with readable measure around 58ch.
 - **Caption** (400, `0.88rem`, 1.45): figcaptions, deck bars, footers, and compact helper text.
 - **Label** (500, `0.74rem`, `0.1em`, uppercase): kicker metadata and discipline tags.
 
-**The Weight-First Rule.** Build hierarchy with weight and rhythm before adding another typeface.
+**The Role-Contrast Rule.** Primary section headings lead through a clear step in scale and space. Nested subsection headings remain compact and use Graphite Signal, staying close to their supporting copy. Build hierarchy with scale, weight, tone, and rhythm before adding another typeface.
 
 **The No-Roman-Numerals Rule.** Do not prefix section headings with Roman numerals. Let headings and spacing communicate section hierarchy. Decimal counters may remain where they clarify sequence or position.
 
-Supporting implementation steps intentionally in use: `0.95rem`, `1.3rem`, `1.5rem`, `clamp(1.05rem, 1.6vw, 1.28rem)`, `clamp(1.05rem, 1.8vw, 1.4rem)`, `clamp(1rem, 1.5vw, 1.22rem)`, `clamp(1.35rem, 2.3vw, 1.8rem)`, and `clamp(1.3rem, 2.6vw, 2.1rem)`.
+Supporting implementation steps intentionally in use: `0.95rem`, `1.3rem`, `1.5rem`, `clamp(1.25rem, 1.6vw, 1.4rem)`, `clamp(1.05rem, 1.6vw, 1.28rem)`, `clamp(1.05rem, 1.8vw, 1.4rem)`, `clamp(1rem, 1.5vw, 1.22rem)`, `clamp(1.35rem, 2.3vw, 1.8rem)`, and `clamp(1.3rem, 2.6vw, 2.1rem)`.
 
 ## Layout
 
@@ -169,6 +187,8 @@ The shell width is `min(100% - 48px, 1280px)` on desktop and `min(100% - 28px, 1
 Grid usage is contextual: two-column spreads for paired narrative/media blocks, two-column project indexes that collapse cleanly, and full-bleed moments only when artifact impact matters. Section rhythm relies on recurring vertical intervals (`48px` to `96px`) separated by quiet rules.
 
 On the About page, major sections no longer use hard divider rules between blocks; spacing now carries the separation while list-level lines still provide scanability.
+
+Within long-form project articles, keep each subsection visibly attached to its content: `36px` above the subsection heading and `8px` below it. The first subsection sits `32px` below its primary section heading. Reserve the larger responsive spacing bands for separation between primary sections.
 
 **The Breathing-Room Rule.** Preserve generous vertical cadence; do not compress spacing to force density.
 
@@ -204,6 +224,7 @@ Borders are thin and quiet (`1px`), including the softened pull-quote rule that 
 
 ### Signature Component
 - **ALDERSON Letter Switch:** interactive letterforms with restrained hover float and switch-pop, respecting reduced-motion preferences.
+- **Lights Carousel:** a direct-manipulation photo carousel adapted from a layered 3D card pattern. Neighboring photographs rotate and recede with extra blur and darkening to emphasize depth; users can click a visible neighboring photo, use arrow keys, or swipe horizontally to navigate. The sequence wraps infinitely from last to first. Only the active image and two neighbors load, and reduced-motion mode replaces spatial movement with a short crossfade.
 
 ## Do's and Don'ts
 

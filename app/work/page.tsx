@@ -1,6 +1,9 @@
+import type { Metadata } from "next";
 import { Footer, Header } from "@/components/site-shell";
 import { ProjectCard } from "@/components/project-card";
 import { siteData, type Project } from "@/lib/content";
+
+export const metadata: Metadata = { title: "Work" };
 
 export default function Work() {
   return (

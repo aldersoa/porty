@@ -1,0 +1,19 @@
+{
+  "name": "Gail Alderson Portfolio",
+  "short_name": "Gail Alderson",
+  "icons": [
+    {
+      "src": "/gail-alderson-android-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/gail-alderson-android-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#f7f7f3",
+  "background_color": "#f7f7f3",
+  "display": "standalone"
+}

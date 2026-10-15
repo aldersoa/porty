@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-16T16:49:00-05:00",
+  "generatedAt": "2026-10-15T11:20:00-05:00",
   "title": "Design System: Gail Alderson Portfolio",
   "extensions": {
     "colorMeta": {
@@ -119,6 +119,14 @@
         "displayName": "Project Hero",
         "purpose": "Case study title lockups on project pages."
       },
+      "section-heading": {
+        "displayName": "Section Heading",
+        "purpose": "Primary section anchors that lead through scale and generous space."
+      },
+      "subsection-heading": {
+        "displayName": "Subsection Heading",
+        "purpose": "Compact Graphite Signal headings nested close to their supporting copy."
+      },
       "body": {
         "displayName": "Body",
         "purpose": "Long-form reading at stable measure and cadence."
@@ -153,6 +161,13 @@
     ]
   },
   "components": [
+    {
+      "name": "Lights Carousel",
+      "kind": "custom",
+      "description": "Direct-manipulation photo sequence with receding 3D neighbors, stronger depth falloff, click-to-select side images, endless wrap navigation, bounded image loading, and a reduced-motion crossfade.",
+      "html": "<figure class=\"lights-carousel\"><div class=\"lights-carousel__stage\"><div class=\"lights-carousel__slide is-active\"><img alt=\"Light photograph\" /></div></div><figcaption>fig. b</figcaption></figure>",
+      "css": ".lights-carousel__stage{position:relative;aspect-ratio:.9;perspective:900px;overflow:hidden}.lights-carousel__slide{position:absolute;inset:0;transform:rotateY(calc(var(--carousel-offset)*50deg)) scale(calc(1 - var(--carousel-abs-offset)*.34)) translateZ(calc(var(--carousel-abs-offset)*-20rem));filter:blur(calc(var(--carousel-abs-offset)*9px)) brightness(calc(1 - var(--carousel-abs-offset)*.4));transition:transform .45s cubic-bezier(.16,1,.3,1),filter .38s cubic-bezier(.16,1,.3,1),opacity .25s ease-out}@media (prefers-reduced-motion:reduce){.lights-carousel__slide{transform:none;filter:none;transition:opacity .16s ease-out}}"
+    },
     {
       "name": "Navigation Link Active",
       "kind": "nav",
@@ -215,8 +230,8 @@
         "section": "colors"
       },
       {
-        "name": "The Weight-First Rule",
-        "body": "Build hierarchy with weight and rhythm before adding another typeface.",
+        "name": "The Role-Contrast Rule",
+        "body": "Primary section headings lead through a clear step in scale and space. Nested subsection headings remain compact and use Graphite Signal, staying close to their supporting copy. Build hierarchy with scale, weight, tone, and rhythm before adding another typeface.",
         "section": "typography"
       },
       {

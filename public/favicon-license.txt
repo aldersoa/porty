@@ -1,0 +1,6 @@
+This favicon uses the following graphic from Twitter Twemoji:
+
+- Graphics title: 25aa.svg
+- Graphics author: Copyright 2020 Twitter, Inc. and other contributors
+- Graphics source: https://github.com/twitter/twemoji/blob/v14.0.2/assets/svg/25aa.svg
+- Graphics license: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)

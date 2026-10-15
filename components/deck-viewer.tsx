@@ -37,10 +37,14 @@ export function DeckViewer({
   const [pdfDoc, setPdfDoc] = useState<PdfDocument | null>(null);
   const [pdfError, setPdfError] = useState(false);
   const [loadedPdf, setLoadedPdf] = useState<string | null>(null);
+  const [renderedPages, setRenderedPages] = useState<Set<number>>(() => new Set());
+  const [failedPages, setFailedPages] = useState<Set<number>>(() => new Set());
   const wantsPdf = Boolean(pdf);
 
   const activePdfDoc = pdf && loadedPdf === pdf && !pdfError ? pdfDoc : null;
-  const totalPages = activePdfDoc?.numPages ?? pages;
+  // The image sequence is the stable source of truth because every PDF page
+  // needs a local fallback, even when the document reports an unexpected count.
+  const totalPages = pages;
 
   const go = useCallback((delta: number) => {
     const el = scroller.current;
@@ -54,6 +58,8 @@ export function DeckViewer({
     if (!pdf) return;
 
     let cancelled = false;
+    const controller = new AbortController();
+
     const loadPdf = async () => {
       try {
         const pdfjsMod = await import("pdfjs-dist/build/pdf.mjs");
@@ -62,7 +68,7 @@ export function DeckViewer({
           pdfjsMod.GlobalWorkerOptions.workerSrc = workerSrc;
         }
         if (cancelled) return;
-        const response = await fetch(pdf, { cache: "no-store" });
+        const response = await fetch(pdf, { cache: "no-store", signal: controller.signal });
         if (!response.ok) {
           throw new Error(`HTTP ${response.status} while fetching ${pdf}`);
         }
@@ -72,10 +78,20 @@ export function DeckViewer({
           setPdfDoc(doc);
           setPdfError(false);
           setLoadedPdf(pdf);
+          if (doc.numPages < pages) {
+            setFailedPages(
+              new Set(Array.from({ length: pages - doc.numPages }, (_, index) => doc.numPages + index)),
+            );
+          }
+          if (doc.numPages !== pages) {
+            console.warn(
+              `[DeckViewer] PDF/image page-count mismatch: ${doc.numPages} PDF pages, ${pages} image pages`,
+            );
+          }
           console.info(`[DeckViewer] PDF loaded: ${pdf} (${doc.numPages} pages)`);
         }
       } catch (error) {
-        if (!cancelled) {
+        if (!cancelled && !(error instanceof DOMException && error.name === "AbortError")) {
           setPdfError(true);
           setLoadedPdf(pdf);
           console.error(`[DeckViewer] PDF failed to load: ${pdf}`, error);
@@ -87,8 +103,9 @@ export function DeckViewer({
 
     return () => {
       cancelled = true;
+      controller.abort();
     };
-  }, [pdf]);
+  }, [pages, pdf]);
 
   useEffect(() => {
     const el = scroller.current;
@@ -118,7 +135,9 @@ export function DeckViewer({
 
   const pagesToRender = useMemo(() => {
     if (!activePdfDoc) return [];
-    return [page - 1, page, page + 1].filter((i) => i >= 0 && i < totalPages);
+    return [page - 1, page, page + 1].filter(
+      (i) => i >= 0 && i < totalPages && i < activePdfDoc.numPages,
+    );
   }, [activePdfDoc, page, totalPages]);
 
   useEffect(() => {
@@ -131,31 +150,53 @@ export function DeckViewer({
       const canvas = canvases.current[pageIndex];
       if (!canvas) return;
 
-      const pdfPage = await activePdfDoc.getPage(pageIndex + 1);
-      const baseViewport = pdfPage.getViewport({ scale: 1 });
-      const cssScale = viewportWidth / baseViewport.width;
-      const renderScale = cssScale * dpr;
-      const viewport = pdfPage.getViewport({ scale: renderScale });
-      const scaleKey = `${Math.round(viewport.width)}x${Math.round(viewport.height)}`;
-      if (renderedScaleKey.current.get(pageIndex) === scaleKey) return;
+      try {
+        const pdfPage = await activePdfDoc.getPage(pageIndex + 1);
+        const baseViewport = pdfPage.getViewport({ scale: 1 });
+        const cssScale = viewportWidth / baseViewport.width;
+        const renderScale = cssScale * dpr;
+        const viewport = pdfPage.getViewport({ scale: renderScale });
+        const scaleKey = `${Math.round(viewport.width)}x${Math.round(viewport.height)}`;
+        if (renderedScaleKey.current.get(pageIndex) === scaleKey) return;
 
-      const context = canvas.getContext("2d");
-      if (!context) return;
+        const context = canvas.getContext("2d");
+        if (!context) throw new Error("Canvas rendering is unavailable");
 
-      renderTasks.current.get(pageIndex)?.cancel();
+        renderTasks.current.get(pageIndex)?.cancel();
 
-      canvas.width = Math.round(viewport.width);
-      canvas.height = Math.round(viewport.height);
-      canvas.style.width = `${Math.round(viewport.width / dpr)}px`;
-      canvas.style.height = `${Math.round(viewport.height / dpr)}px`;
+        canvas.width = Math.round(viewport.width);
+        canvas.height = Math.round(viewport.height);
+        canvas.style.width = `${Math.round(viewport.width / dpr)}px`;
+        canvas.style.height = `${Math.round(viewport.height / dpr)}px`;
 
-      const task = pdfPage.render({ canvasContext: context, viewport });
-      renderTasks.current.set(pageIndex, task);
-      await task.promise;
-      if (!cancelled) renderedScaleKey.current.set(pageIndex, scaleKey);
+        const task = pdfPage.render({ canvasContext: context, viewport });
+        renderTasks.current.set(pageIndex, task);
+        await task.promise;
+        if (!cancelled) {
+          renderedScaleKey.current.set(pageIndex, scaleKey);
+          setRenderedPages((current) => new Set(current).add(pageIndex));
+          setFailedPages((current) => {
+            if (!current.has(pageIndex)) return current;
+            const next = new Set(current);
+            next.delete(pageIndex);
+            return next;
+          });
+        }
+      } catch (error) {
+        const name = error instanceof Error ? error.name : "";
+        if (cancelled || name === "RenderingCancelledException") return;
+
+        console.error(`[DeckViewer] PDF page ${pageIndex + 1} failed to render`, error);
+        setRenderedPages((current) => {
+          const next = new Set(current);
+          next.delete(pageIndex);
+          return next;
+        });
+        setFailedPages((current) => new Set(current).add(pageIndex));
+      }
     };
 
-    Promise.all(pagesToRender.map((index) => renderPage(index))).catch(() => {});
+    void Promise.all(pagesToRender.map((index) => renderPage(index)));
 
     return () => {
       cancelled = true;
@@ -171,6 +212,15 @@ export function DeckViewer({
 
   const src = (i: number) => `${dir}/${String(i + 1).padStart(2, "0")}.jpg`;
   const pad = (n: number) => String(n).padStart(2, "0");
+  const fallbackActive = pdfError || failedPages.size > 0;
+  const pdfStatus = !wantsPdf
+    ? null
+    : fallbackActive
+      ? "PDF unavailable; showing the image version."
+      : activePdfDoc
+        ? "PDF ready."
+        : "Loading PDF; showing the image version in the meantime.";
+
   return (
     <section
       className="deck"
@@ -185,14 +235,22 @@ export function DeckViewer({
           {Array.from({ length: totalPages }, (_, i) => (
             <div className="deck-page" key={i}>
               {wantsPdf ? (
-                <canvas
-                  ref={(el) => {
-                    canvases.current[i] = el;
-                  }}
-                  role="img"
-                  aria-label={`${title}, page ${i + 1} of ${totalPages}`}
-                  style={{ display: "block", width: "100%" }}
-                />
+                <>
+                  <ProgressiveImage
+                    src={src(i)}
+                    alt={`${title}, page ${i + 1} of ${totalPages}`}
+                    loading={i < 2 ? "eager" : "lazy"}
+                    fetchPriority={i < 2 ? "high" : "auto"}
+                    draggable={false}
+                  />
+                  <canvas
+                    ref={(el) => {
+                      canvases.current[i] = el;
+                    }}
+                    className={`deck-pdf-page${renderedPages.has(i) ? " is-rendered" : ""}`}
+                    aria-hidden="true"
+                  />
+                </>
               ) : (
                 <ProgressiveImage
                   src={src(i)}
@@ -217,7 +275,10 @@ export function DeckViewer({
       </div>
       <div className="deck-bar">
         <span className="deck-count accent" aria-live="polite">{pad(page + 1)} / {pad(totalPages)}</span>
-        <span className="deck-hint">click, swipe, or use arrow keys</span>
+        <span className="deck-hint">
+          {fallbackActive ? "showing image fallback" : "click, swipe, or use arrow keys"}
+        </span>
+        {pdfStatus && <span className="sr-only" role="status" aria-live="polite">{pdfStatus}</span>}
         {pdf && (
           <a className="deck-pdf" href={pdf} target="_blank" rel="noreferrer">
             open original PDF ↗

@@ -1,7 +1,23 @@
 import Link from "next/link";
 import { AldersonWordmark } from "@/components/alderson-wordmark";
+import { LightsCarousel, type LightsCarouselImage } from "@/components/lights-carousel";
 import { ProgressiveImage } from "@/components/progressive-image";
 import { Footer, Header } from "@/components/site-shell";
+
+const lightPhotos: LightsCarouselImage[] = [
+  { src: "/media/about/lights-1.jpg", alt: "Gail reaching toward rainbow-colored light projections", width: 1346, height: 1794 },
+  { src: "/media/about/lights-2.jpg", alt: "Gail standing in a tunnel of blue lights", width: 1346, height: 1794 },
+  { src: "/media/about/lights-3.jpg", alt: "Gail reclining in blue light", width: 1346, height: 1794 },
+  { src: "/media/about/lights-4.jpg", alt: "Gail at a colorful outdoor light display", width: 2392, height: 1794 },
+  { src: "/media/about/lights-5.jpg", alt: "Gail casting multicolored shadows in an interactive light installation", width: 1346, height: 1794 },
+  { src: "/media/about/lights-6.jpg", alt: "Gail walking through a garden illuminated in saturated colors", width: 2392, height: 1794 },
+  { src: "/media/about/lights-7.jpg", alt: "Gail relaxing in a room filled with red light", width: 1346, height: 1794 },
+  { src: "/media/about/lights-8.jpg", alt: "Gail holding an illuminated fiber artwork with another person", width: 2392, height: 1794 },
+  { src: "/media/about/lights-9.jpg", alt: "Gail looking at a Halloween display lit in blue and red", width: 2392, height: 1794 },
+  { src: "/media/about/lights-10.jpg", alt: "Gail taking a selfie with two people at a holiday light display", width: 2392, height: 1794 },
+  { src: "/media/about/lights-11.jpg", alt: "Gail inside a white illuminated sphere", width: 1346, height: 1794 },
+  { src: "/media/about/lights-12.jpg", alt: "Gail beneath a canopy of lights", width: 1920, height: 2222 },
+];
 
 export default function Home() {
   return (
@@ -44,10 +60,7 @@ export default function Home() {
         </section>
 
         <section className="spread rev" aria-labelledby="interests-title">
-          <figure>
-            <ProgressiveImage src="/media/about/02.jpg" alt="Gail Alderson beneath a canopy of lights" loading="lazy" />
-            <figcaption><span className="fig-n">fig. b</span>i&rsquo;m not weird about lights, YOU&rsquo;RE weird</figcaption>
-          </figure>
+          <LightsCarousel images={lightPhotos} />
           <div>
             <h2 className="section-label" id="interests-title">My interests</h2>
             <div className="interests">

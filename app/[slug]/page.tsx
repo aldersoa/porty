@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const project = getProject((await params).slug);
-  return project && !project.locked ? { title: `${project.title} - Gail Alderson`, description: project.dek } : {};
+  return project && !project.locked ? { title: project.title, description: project.dek } : {};
 }
 
 function Media({ figure, eager = false }: { figure: Figure; eager?: boolean }) {
@@ -186,7 +186,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </header>
 
         {project.deck && (
-          <DeckViewer dir={project.deck.dir} pages={project.deck.pages} title={project.title} pdf={project.pdf} />
+          <DeckViewer
+            key={project.slug}
+            dir={project.deck.dir}
+            pages={project.deck.pages}
+            title={project.title}
+            pdf={project.pdf}
+          />
         )}
         {hasArticle && project.cover && (
           <div className="proj-hero cover-artwork" data-cover={project.slug}>
